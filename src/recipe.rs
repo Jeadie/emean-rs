@@ -433,9 +433,10 @@ impl Recipe {
     }
 
     /// Whether the last epoch visits every row, so every row gets a label
-    /// from it. False only for budgets below one epoch.
+    /// from it. False only for a budget below one epoch whose rows round to
+    /// fewer than `n`.
     pub fn last_epoch_is_full(&self) -> bool {
-        self.full_passes > 0
+        self.full_passes > 0 || self.partial_rows == self.rows
     }
 
     /// The step size `α(t)` of update `t` (0-based), from the cosine schedule

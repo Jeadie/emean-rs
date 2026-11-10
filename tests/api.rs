@@ -157,7 +157,7 @@ fn every_row_its_own_cluster_when_k_equals_n() {
 }
 
 #[test]
-fn budgets_below_one_epoch_give_no_labels() {
+fn labels_need_a_last_epoch_that_visits_every_row() {
     let values = blobs(1000, 3, 4, 1.0, 5);
     let data = RowMatrix::new(&values, 3).unwrap();
     let fit = Emeans::new(k(4))
@@ -166,6 +166,15 @@ fn budgets_below_one_epoch_give_no_labels() {
         .unwrap();
     assert_eq!(fit.labels, None);
     assert_eq!(fit.model.history()[0].rows, 500);
+
+    // 0.9996 of 1000 rows rounds to all 1000: the only epoch visits every row.
+    let fit = Emeans::new(k(4))
+        .with_epochs(Epochs::new(0.9996).unwrap())
+        .fit(data)
+        .unwrap();
+    assert_eq!(fit.model.history()[0].rows, 1000);
+    assert!(fit.model.recipe().last_epoch_is_full());
+    assert_eq!(fit.labels.map(|labels| labels.len()), Some(1000));
 }
 
 #[test]
