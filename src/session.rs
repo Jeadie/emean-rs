@@ -13,7 +13,7 @@ use crate::rng::{Rng, Stream};
 use crate::rows::{CheckedRows, RowSource, Window};
 use crate::running::RunningCentroids;
 use crate::scalar::Scalar;
-use crate::stats::{ClosingSums, EpochStats};
+use crate::stats::{ClosingSums, EpochStats, History};
 
 /// A training run that the caller feeds with rows.
 ///
@@ -62,7 +62,7 @@ pub struct Session<T: Scalar> {
     centroids: RunningCentroids<T>,
     /// The open epoch, or the closing sums once every epoch is complete.
     phase: Phase,
-    history: Vec<EpochStats>,
+    history: History,
     /// Search output buffers, at most one batch long.
     labels: Vec<u32>,
     distances: Vec<f64>,
@@ -97,7 +97,7 @@ impl<T: Scalar> Session<T> {
                 Rng::new(recipe.seed(), Stream::Revival),
             ),
             phase: Phase::Epoch(Epoch::open(&recipe, first)),
-            history: Vec::new(),
+            history: History::default(),
             labels: Vec::new(),
             distances: Vec::new(),
             recipe,
@@ -151,7 +151,7 @@ impl<T: Scalar> Session<T> {
 
     /// The statistics of each completed epoch.
     pub fn history(&self) -> &[EpochStats] {
-        &self.history
+        self.history.epochs()
     }
 
     /// The number of dead clusters revived so far.
@@ -160,7 +160,7 @@ impl<T: Scalar> Session<T> {
             Phase::Epoch(epoch) => epoch.revivals(),
             Phase::Complete(_) => 0,
         };
-        completed_revivals(&self.history) + open
+        self.history.revivals() + open
     }
 
     /// The current centroids, `k × d`: the centroids that the next rows are
@@ -244,8 +244,13 @@ impl<T: Scalar> Session<T> {
             positions::normalize_each(&mut positions, dim);
         }
         let centroids = Centroids::from_positions(&positions, dim, metric);
-        let revivals = completed_revivals(&history);
-        Ok(Model::new(centroids, recipe, history, revivals))
+        let revivals = history.revivals();
+        Ok(Model::new(
+            centroids,
+            recipe,
+            history.into_epochs(),
+            revivals,
+        ))
     }
 
     /// Checks rows before they are fed.
@@ -345,11 +350,6 @@ impl<T: Scalar> fmt::Debug for Session<T> {
             .field("revivals", &self.revivals())
             .finish_non_exhaustive()
     }
-}
-
-/// The clusters revived in the epochs of `history`.
-fn completed_revivals(history: &[EpochStats]) -> u64 {
-    history.iter().map(|epoch| epoch.revivals).sum()
 }
 
 /// The error of [`Session::finish`] when the recipe expects more rows. It

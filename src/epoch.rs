@@ -149,13 +149,19 @@ impl Epoch {
     /// # Panics
     ///
     /// Panics if `source` has more rows than
-    /// [`Epoch::rows_to_next_update`], or if the lengths differ.
+    /// [`Epoch::rows_to_next_update`], if the lengths differ, or if a full
+    /// batch was not closed.
+    #[must_use = "a full batch must be closed after its update"]
     pub(crate) fn add<T: Scalar, S: RowSource<T>>(
         &mut self,
         source: &S,
         labels: &[u32],
         distances: &[f64],
     ) -> Option<FullBatch<'_>> {
+        assert!(
+            !self.batch.is_full(),
+            "a full batch must be closed before the epoch takes more rows"
+        );
         assert_eq!(distances.len(), source.len());
         self.batch.add(source, labels);
         for &distance in distances {
@@ -335,6 +341,23 @@ mod tests {
         let mut positions = [7.0, 8.0];
         closing.apply_means(&mut positions, 1);
         assert_eq!(positions, [3.0, 8.0]);
+    }
+
+    #[test]
+    #[should_panic(expected = "must be closed")]
+    fn a_full_batch_is_not_handed_out_twice() {
+        let recipe = recipe(1.0);
+        let data = [1.0, 2.0, 3.0];
+        let rows = CheckedRows::new(RowMatrix::new(&data, 1).unwrap(), RowNorm::Any).unwrap();
+        let mut epoch = Epoch::open(&recipe, recipe.planned_epoch(0).unwrap());
+        // The full batch goes out of scope without a close.
+        assert!(
+            epoch
+                .add(&Window::new(&rows, 0, 2), &[0, 0], &[1.0, 1.0])
+                .is_some()
+        );
+        // Without the check, the same batch would be applied twice.
+        let _again = epoch.add(&Window::new(&rows, 2, 0), &[], &[]);
     }
 
     #[test]

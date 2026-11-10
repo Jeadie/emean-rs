@@ -41,6 +41,37 @@ impl EpochStats {
     }
 }
 
+/// The statistics of a run's completed epochs, in order, and their total
+/// revivals.
+#[derive(Clone, Debug, Default)]
+pub(crate) struct History {
+    epochs: Vec<EpochStats>,
+    revivals: u64,
+}
+
+impl History {
+    /// Adds the next completed epoch.
+    pub(crate) fn push(&mut self, epoch: EpochStats) {
+        self.revivals += epoch.revivals;
+        self.epochs.push(epoch);
+    }
+
+    /// The completed epochs, in order.
+    pub(crate) fn epochs(&self) -> &[EpochStats] {
+        &self.epochs
+    }
+
+    /// The clusters revived in the completed epochs.
+    pub(crate) fn revivals(&self) -> u64 {
+        self.revivals
+    }
+
+    /// The completed epochs, in order.
+    pub(crate) fn into_epochs(self) -> Vec<EpochStats> {
+        self.epochs
+    }
+}
+
 /// The per-cluster sums `s_j` (`k × d`, row-major) and counts `n_j` of the
 /// rows fed into the current batch (Algorithm 1, line 8).
 ///
@@ -178,6 +209,23 @@ mod tests {
         let rows = CheckedRows::new(RowMatrix::new(&data, 1).unwrap(), RowNorm::Any).unwrap();
         let mut batch = BatchStats::new(1, 1, NonZeroUsize::new(2).unwrap());
         batch.add(&rows, &[0, 0, 0]);
+    }
+
+    #[test]
+    fn the_history_keeps_the_total_revivals() {
+        let epoch = |epoch, revivals| EpochStats {
+            epoch,
+            rows: 10,
+            updates: 2,
+            objective: 1.0,
+            imbalance: 1.0,
+            revivals,
+        };
+        let mut history = History::default();
+        history.push(epoch(0, 3));
+        history.push(epoch(1, 4));
+        assert_eq!(history.revivals(), 7);
+        assert_eq!(history.epochs(), [epoch(0, 3), epoch(1, 4)]);
     }
 
     #[test]
