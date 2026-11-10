@@ -493,7 +493,12 @@ mod tests {
                 Metric::SquaredEuclidean => row
                     .iter()
                     .zip(c)
-                    .map(|(&x, &y)| (x.to_f64() - y.to_f64()).powi(2))
+                    // Not `powi`: its precision is unspecified and can
+                    // differ between platforms.
+                    .map(|(&x, &y)| {
+                        let difference = x.to_f64() - y.to_f64();
+                        difference * difference
+                    })
                     .sum(),
                 Metric::Spherical => {
                     2.0 - 2.0
