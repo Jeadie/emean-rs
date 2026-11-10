@@ -1,0 +1,10843 @@
+{
+ "cases": [
+  {
+   "expected": {
+    "alpha0": 0.8870678791118717,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.8870678791118717,
+     0.8870678791118717
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     0
+    ],
+    "epoch_steps": [
+     0
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 0,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 1,
+    "n": 1,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.8244,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.8244,
+     0.08244000000000001
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.7955953748927908,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.7955953748927908,
+     0.07955953748927908
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.7482999637605001,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.7482999637605001,
+     0.4115649800682751,
+     0.07482999637605002
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     1
+    ],
+    "epoch_steps": [
+     1,
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 2,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.7340172502960468,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.7340172502960468,
+     0.5688633689794363,
+     0.2385556063462153,
+     0.07340172502960468
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     1,
+     1
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6954354955810058,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    "alphas": [
+     0.6954354955810058,
+     0.635668133057022,
+     0.4791951465512957,
+     0.12931091208208442,
+     0.06954354955810059
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 5,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5866454736948072,
+    "alpha_steps": [
+     0,
+     1,
+     12,
+     24,
+     25
+    ],
+    "alphas": [
+     0.5866454736948072,
+     0.5845638300426403,
+     0.3392311088649117,
+     0.06074619102164769,
+     0.05866454736948073
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1,
+    "total_steps": 25,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 1,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6494617248425202,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.6494617248425202,
+     0.06494617248425202
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 2,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6035797919954332,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.6035797919954332,
+     0.3319688855974883,
+     0.060357979199543325
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2
+    ],
+    "epoch_steps": [
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 2,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 2,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5824906488237741,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.5824906488237741,
+     0.4514302528384249,
+     0.18930946086772665,
+     0.05824906488237741
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     2
+    ],
+    "epoch_steps": [
+     1,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 2,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.547863581364329,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    "alphas": [
+     0.547863581364329,
+     0.5007788963156697,
+     0.3775095905086957,
+     0.10187104318509223,
+     0.0547863581364329
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     1,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     1,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 5,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 2,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.537406573574415,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     5,
+     6
+    ],
+    "alphas": [
+     0.537406573574415,
+     0.5050071006602157,
+     0.2955736154659283,
+     0.08614013027164076,
+     0.053740657357441504
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 6,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 2,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5091591603214756,
+    "alpha_steps": [
+     0,
+     1,
+     5,
+     9,
+     10
+    ],
+    "alphas": [
+     0.5091591603214756,
+     0.49794514994161027,
+     0.2800375381768116,
+     0.06212992641201291,
+     0.05091591603214756
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 10,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 2,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.42950916179982307,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.42950916179982307,
+     0.42912776960137367,
+     0.23623003898990272,
+     0.04333230837843173,
+     0.04295091617998231
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 2,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.47159371939464,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.47159371939464,
+     0.047159371939464005
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 2,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.43827746604711676,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.43827746604711676,
+     0.24105260632591424,
+     0.04382774660471168
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2
+    ],
+    "epoch_steps": [
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 2,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4229640040111817,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.4229640040111817,
+     0.32779710310866583,
+     0.1374633013036341,
+     0.04229640040111818
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     2
+    ],
+    "epoch_steps": [
+     1,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 3,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.39782024740429556,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     4,
+     5
+    ],
+    "alphas": [
+     0.39782024740429556,
+     0.36363063945779706,
+     0.2741210837918306,
+     0.07397163268692805,
+     0.03978202474042956
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     1,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     1,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 5,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.39022709909585596,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     5,
+     6
+    ],
+    "alphas": [
+     0.39022709909585596,
+     0.36670086598067425,
+     0.2146249045027208,
+     0.0625489430247673,
+     0.0390227099095856
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 6,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 2,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.36971580155563327,
+    "alpha_steps": [
+     0,
+     1,
+     5,
+     9,
+     10
+    ],
+    "alphas": [
+     0.36971580155563327,
+     0.3615729708666452,
+     0.2033436908555983,
+     0.04511441084455141,
+     0.03697158015556333
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 10,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 2,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3118795386692996,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.3118795386692996,
+     0.3116025983069427,
+     0.1715337462681148,
+     0.03146489422928692,
+     0.031187953866929963
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 2,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5411874455297809,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.5411874455297809,
+     0.29765309504137955,
+     0.0541187445529781
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2
+    ],
+    "epoch_steps": [
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 2,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 3,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5029546673941566,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.5029546673941566,
+     0.3897898672304714,
+     0.16346026690310098,
+     0.050295466739415665
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3
+    ],
+    "epoch_steps": [
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 3,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4853813769523689,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.4853813769523689,
+     0.4214071657209106,
+     0.2669597573238029,
+     0.11251234892669518,
+     0.04853813769523689
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     3
+    ],
+    "epoch_steps": [
+     1,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 4,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 3,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.45652712200900264,
+    "alpha_steps": [
+     0,
+     1,
+     4,
+     7,
+     8
+    ],
+    "alphas": [
+     0.45652712200900264,
+     0.4408891459321317,
+     0.2510899171049515,
+     0.06129068827777122,
+     0.04565271220090027
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     2,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     2,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 8,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 3,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4478134424844998,
+    "alpha_steps": [
+     0,
+     1,
+     4,
+     8,
+     9
+    ],
+    "alphas": [
+     0.4478134424844998,
+     0.43566053769261354,
+     0.28129028806645956,
+     0.056934249040336234,
+     0.044781344248449984
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 9,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 3,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4242752648884464,
+    "alpha_steps": [
+     0,
+     1,
+     7,
+     14,
+     15
+    ],
+    "alphas": [
+     0.4242752648884464,
+     0.4201031202692457,
+     0.2533083743372152,
+     0.04659967110804535,
+     0.042427526488844645
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 15,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 3,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.35790402608013006,
+    "alpha_steps": [
+     0,
+     1,
+     37,
+     74,
+     75
+    ],
+    "alphas": [
+     0.35790402608013006,
+     0.35776275189250134,
+     0.20022013372052283,
+     0.03593167679564171,
+     0.03579040260801301
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 75,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 3,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3929725040978494,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.3929725040978494,
+     0.2161348772538172,
+     0.03929725040978494
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     2
+    ],
+    "epoch_steps": [
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 2,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 3,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3652105323694291,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.3652105323694291,
+     0.28303816258630754,
+     0.1186934230200645,
+     0.03652105323694291
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     3
+    ],
+    "epoch_steps": [
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 3,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3524500368938035,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.3524500368938035,
+     0.3059964352942677,
+     0.19384752029159194,
+     0.08169860528891615,
+     0.03524500368938035
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     3
+    ],
+    "epoch_steps": [
+     1,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 4,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 3,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3314980933248383,
+    "alpha_steps": [
+     0,
+     1,
+     4,
+     7,
+     8
+    ],
+    "alphas": [
+     0.3314980933248383,
+     0.32014288789886164,
+     0.18232395132866108,
+     0.04450501475846054,
+     0.033149809332483834
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     2,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     2,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 8,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 3,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3251708281768119,
+    "alpha_steps": [
+     0,
+     1,
+     4,
+     8,
+     9
+    ],
+    "alphas": [
+     0.3251708281768119,
+     0.31634623797691325,
+     0.20425335028175404,
+     0.04134167301757985,
+     0.032517082817681196
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 9,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 3,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.30807904848342654,
+    "alpha_steps": [
+     0,
+     1,
+     7,
+     14,
+     15
+    ],
+    "alphas": [
+     0.30807904848342654,
+     0.30504952861557244,
+     0.18393483994220466,
+     0.03383742471619674,
+     0.030807904848342657
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 15,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 3,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2598848929648186,
+    "alpha_steps": [
+     0,
+     1,
+     37,
+     74,
+     75
+    ],
+    "alphas": [
+     0.2598848929648186,
+     0.259782309522177,
+     0.14538586947806495,
+     0.026091072739123426,
+     0.02598848929648186
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 75,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 3,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.36968493688548604,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.36968493688548604,
+     0.3209597418854289,
+     0.20332671528701735,
+     0.08569368868860573,
+     0.036968493688548605
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     4
+    ],
+    "epoch_steps": [
+     4
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 4,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 7,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3435681407757964,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     6,
+     7
+    ],
+    "alphas": [
+     0.3435681407757964,
+     0.32825736690563667,
+     0.22336547403006712,
+     0.04966758794773933,
+     0.034356814077579644
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7
+    ],
+    "epoch_steps": [
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 7,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 7,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.331563832801721,
+    "alpha_steps": [
+     0,
+     1,
+     5,
+     9,
+     10
+    ],
+    "alphas": [
+     0.331563832801721,
+     0.32426128273018967,
+     0.18236010804094657,
+     0.04045893335170347,
+     0.033156383280172105
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     7
+    ],
+    "epoch_steps": [
+     3,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 10,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 7,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3118535022947487,
+    "alpha_steps": [
+     0,
+     1,
+     9,
+     17,
+     18
+    ],
+    "alphas": [
+     0.3118535022947487,
+     0.30972151235085726,
+     0.17151942626211178,
+     0.03331734017336627,
+     0.03118535022947487
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     4,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 18,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.30590119114698594,
+    "alpha_steps": [
+     0,
+     1,
+     10,
+     20,
+     21
+    ],
+    "alphas": [
+     0.30590119114698594,
+     0.3043636925441485,
+     0.1785326662200181,
+     0.032127617717535986,
+     0.030590119114698597
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 21,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 7,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.28982227104107317,
+    "alpha_steps": [
+     0,
+     1,
+     17,
+     34,
+     35
+    ],
+    "alphas": [
+     0.28982227104107317,
+     0.2892972383754936,
+     0.1652535212325167,
+     0.02950725976968689,
+     0.02898222710410732
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 35,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 7,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.24448410321671674,
+    "alpha_steps": [
+     0,
+     1,
+     87,
+     174,
+     175
+    ],
+    "alphas": [
+     0.24448410321671674,
+     0.2444663758132781,
+     0.13545376138929133,
+     0.02446613772511032,
+     0.024448410321671676
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 175,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 7,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2684393671270973,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.2684393671270973,
+     0.23305853549475158,
+     0.14764165191990353,
+     0.06222476834505547,
+     0.026843936712709734
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     4
+    ],
+    "epoch_steps": [
+     4
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 4,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 7,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.24947517486615,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     6,
+     7
+    ],
+    "alphas": [
+     0.24947517486615,
+     0.23835756081739343,
+     0.16219239818594122,
+     0.036065131535371574,
+     0.024947517486615
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     7
+    ],
+    "epoch_steps": [
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 7,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 7,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.24075848529121682,
+    "alpha_steps": [
+     0,
+     1,
+     5,
+     9,
+     10
+    ],
+    "alphas": [
+     0.24075848529121682,
+     0.23545588374047244,
+     0.13241716691016928,
+     0.02937845007986607,
+     0.024075848529121684
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     3,
+     7
+    ],
+    "epoch_steps": [
+     3,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 10,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 7,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2264462206592485,
+    "alpha_steps": [
+     0,
+     1,
+     9,
+     17,
+     18
+    ],
+    "alphas": [
+     0.2264462206592485,
+     0.2248981185480802,
+     0.12454542136258669,
+     0.02419272417709316,
+     0.022644622065924852
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     4,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 18,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.22212406825858427,
+    "alpha_steps": [
+     0,
+     1,
+     10,
+     20,
+     21
+    ],
+    "alphas": [
+     0.22212406825858427,
+     0.22100764421550156,
+     0.12963794612616394,
+     0.023328830868941122,
+     0.022212406825858427
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 21,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 7,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.21044868009242976,
+    "alpha_steps": [
+     0,
+     1,
+     17,
+     34,
+     35
+    ],
+    "alphas": [
+     0.21044868009242976,
+     0.2100674380606158,
+     0.11999555899926288,
+     0.021426110041056923,
+     0.021044868009242976
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 35,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 7,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.17752727090544326,
+    "alpha_steps": [
+     0,
+     1,
+     87,
+     174,
+     175
+    ],
+    "alphas": [
+     0.17752727090544326,
+     0.17751439850387893,
+     0.09835705584506807,
+     0.017765599492108666,
+     0.01775272709054433
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 175,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 7,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.11177813356931124,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.11177813356931124,
+     0.11167887769332031,
+     0.061477973463121185,
+     0.011277069232922057,
+     0.011177813356931125
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     50
+    ],
+    "epoch_steps": [
+     50
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 100,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1002518163220261,
+    "alpha_steps": [
+     0,
+     1,
+     70,
+     139,
+     140
+    ],
+    "alphas": [
+     0.1002518163220261,
+     0.10024045836509103,
+     0.055138498977114356,
+     0.010036539589137673,
+     0.01002518163220261
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     40,
+     100
+    ],
+    "epoch_steps": [
+     40,
+     100
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 140,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 1,
+    "n": 100,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.09249244638179802,
+    "alpha_steps": [
+     0,
+     1,
+     150,
+     299,
+     300
+    ],
+    "alphas": [
+     0.09249244638179802,
+     0.09249016424301382,
+     0.05087084550998891,
+     0.009251526776964005,
+     0.009249244638179803
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     100,
+     100,
+     100
+    ],
+    "epoch_steps": [
+     100,
+     100,
+     100
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 300,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 100,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.14078932903560076,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.14078932903560076,
+     0.14066431202433585,
+     0.07743413096958042,
+     0.014203949914824978,
+     0.014078932903560076
+    ],
+    "batch_law": "throughput",
+    "batch_size": 2,
+    "epoch_rows": [
+     100
+    ],
+    "epoch_steps": [
+     50
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 50,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 100,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.06846839936828639,
+    "alpha_steps": [
+     0,
+     1,
+     125,
+     249,
+     250
+    ],
+    "alphas": [
+     0.06846839936828639,
+     0.06846596667864288,
+     0.03765761965255752,
+     0.006849272626472141,
+     0.006846839936828639
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     100,
+     50,
+     100
+    ],
+    "epoch_steps": [
+     100,
+     50,
+     100
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 250,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 100,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4137359128935288,
+    "alpha_steps": [
+     0,
+     1,
+     32,
+     64,
+     65
+    ],
+    "alphas": [
+     0.4137359128935288,
+     0.41351849552961784,
+     0.23205358622882988,
+     0.04159100865326384,
+     0.04137359128935288
+    ],
+    "batch_law": "throughput",
+    "batch_size": 8,
+    "epoch_rows": [
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "epoch_steps": [
+     13,
+     13,
+     13,
+     13,
+     13
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 13,
+    "total_steps": 65,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 2,
+    "n": 100,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1206220929930036,
+    "alpha_steps": [
+     0,
+     1,
+     17,
+     34,
+     35
+    ],
+    "alphas": [
+     0.1206220929930036,
+     0.12040357790517266,
+     0.0687774115285468,
+     0.012280724387131304,
+     0.01206220929930036
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4,
+    "epoch_rows": [
+     40,
+     100
+    ],
+    "epoch_steps": [
+     10,
+     25
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 35,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 10,
+    "n": 100,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.0319452481802949,
+    "alpha_steps": [
+     0,
+     1,
+     150,
+     299,
+     300
+    ],
+    "alphas": [
+     0.0319452481802949,
+     0.03194445997009293,
+     0.017569886499162198,
+     0.0031953130282314592,
+     0.0031945248180294903
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     100,
+     100,
+     100
+    ],
+    "epoch_steps": [
+     100,
+     100,
+     100
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 300,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 10,
+    "n": 100,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5783120607812411,
+    "alpha_steps": [
+     0,
+     1,
+     50,
+     99,
+     100
+    ],
+    "alphas": [
+     0.5783120607812411,
+     0.5781836478399469,
+     0.31807163342968264,
+     0.05795961901941832,
+     0.057831206078124114
+    ],
+    "batch_law": "throughput",
+    "batch_size": 32,
+    "epoch_rows": [
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100,
+     100
+    ],
+    "epoch_steps": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 4,
+    "total_steps": 100,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 100,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.7581624126961758,
+    "alpha_steps": [
+     0,
+     1,
+     40,
+     79,
+     80
+    ],
+    "alphas": [
+     0.7581624126961758,
+     0.7578993806114502,
+     0.4169893269828967,
+     0.07607927335434327,
+     0.07581624126961758
+    ],
+    "batch_law": "throughput",
+    "batch_size": 32,
+    "epoch_rows": [
+     1000,
+     500,
+     1000
+    ],
+    "epoch_steps": [
+     32,
+     16,
+     32
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 32,
+    "total_steps": 80,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 1000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.20225942531668448,
+    "alpha_steps": [
+     0,
+     1,
+     312,
+     624,
+     625
+    ],
+    "alphas": [
+     0.20225942531668448,
+     0.20225827549608924,
+     0.1114714337042481,
+     0.0202270923522637,
+     0.02022594253166845
+    ],
+    "batch_law": "quality",
+    "batch_size": 8,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     125,
+     125,
+     125,
+     125,
+     125
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 125,
+    "total_steps": 625,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 1000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.03967864689930566,
+    "alpha_steps": [
+     0,
+     1,
+     250,
+     499,
+     500
+    ],
+    "alphas": [
+     0.03967864689930566,
+     0.03967829444917192,
+     0.021823255794618118,
+     0.00396821714006431,
+     0.0039678646899305664
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     500
+    ],
+    "epoch_steps": [
+     500
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1000,
+    "total_steps": 500,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 1,
+    "n": 1000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5400167651465049,
+    "alpha_steps": [
+     0,
+     1,
+     48,
+     95,
+     96
+    ],
+    "alphas": [
+     0.5400167651465049,
+     0.5398866558639405,
+     0.2970092208305777,
+     0.05413178579721486,
+     0.05400167651465049
+    ],
+    "batch_law": "throughput",
+    "batch_size": 32,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     32,
+     32,
+     32
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 32,
+    "total_steps": 96,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4315952940680023,
+    "alpha_steps": [
+     0,
+     1,
+     400,
+     799,
+     800
+    ],
+    "alphas": [
+     0.4315952940680023,
+     0.43159379652800006,
+     0.2373774117374013,
+     0.043161026946802475,
+     0.043159529406800234
+    ],
+    "batch_law": "quality",
+    "batch_size": 32,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32,
+     32
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 32,
+    "total_steps": 800,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 1000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.049976948939926616,
+    "alpha_steps": [
+     0,
+     1,
+     250,
+     499,
+     500
+    ],
+    "alphas": [
+     0.049976948939926616,
+     0.049976505013943386,
+     0.027487321916959642,
+     0.004998138819975891,
+     0.004997694893992662
+    ],
+    "batch_law": "quality",
+    "batch_size": 2,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     500
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 500,
+    "total_steps": 500,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.45421417581582035,
+    "alpha_steps": [
+     0,
+     1,
+     40,
+     79,
+     80
+    ],
+    "alphas": [
+     0.45421417581582035,
+     0.4540565936149936,
+     0.24981779669870122,
+     0.0455789997824088,
+     0.04542141758158204
+    ],
+    "batch_law": "throughput",
+    "batch_size": 64,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 16,
+    "total_steps": 80,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.025578446179539808,
+    "alpha_steps": [
+     0,
+     1,
+     125,
+     249,
+     250
+    ],
+    "alphas": [
+     0.025578446179539808,
+     0.025577537374577346,
+     0.014068145398746896,
+     0.0025587534229164445,
+     0.002557844617953981
+    ],
+    "batch_law": "quality",
+    "batch_size": 2,
+    "epoch_rows": [
+     500
+    ],
+    "epoch_steps": [
+     250
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 500,
+    "total_steps": 250,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.042818047531244824,
+    "alpha_steps": [
+     0,
+     1,
+     175,
+     349,
+     350
+    ],
+    "alphas": [
+     0.042818047531244824,
+     0.04281727133753515,
+     0.023549926142184655,
+     0.004282580946834155,
+     0.004281804753124482
+    ],
+    "batch_law": "quality",
+    "batch_size": 4,
+    "epoch_rows": [
+     400,
+     1000
+    ],
+    "epoch_steps": [
+     100,
+     250
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 250,
+    "total_steps": 350,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5575028322823337,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.5575028322823337,
+     0.5570077852617883,
+     0.3066265577552835,
+     0.05624533024877874,
+     0.05575028322823337
+    ],
+    "batch_law": "throughput",
+    "batch_size": 512,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 1000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.009928604274472001,
+    "alpha_steps": [
+     0,
+     1,
+     125,
+     249,
+     250
+    ],
+    "alphas": [
+     0.009928604274472001,
+     0.009928251510087032,
+     0.005460732350959601,
+     0.0009932131918321688,
+     0.0009928604274472002
+    ],
+    "batch_law": "quality",
+    "batch_size": 4,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     250
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 250,
+    "total_steps": 250,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.10936923207834695,
+    "alpha_steps": [
+     0,
+     1,
+     20,
+     39,
+     40
+    ],
+    "alphas": [
+     0.10936923207834695,
+     0.10921751509928422,
+     0.06015307764309083,
+     0.011088640186897425,
+     0.010936923207834695
+    ],
+    "batch_law": "throughput",
+    "batch_size": 64,
+    "epoch_rows": [
+     1000,
+     500,
+     1000
+    ],
+    "epoch_steps": [
+     16,
+     8,
+     16
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 16,
+    "total_steps": 40,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 256,
+    "n": 1000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5416365835164122,
+    "alpha_steps": [
+     0,
+     1,
+     48,
+     96,
+     97
+    ],
+    "alphas": [
+     0.5416365835164122,
+     0.5415087605706973,
+     0.3018469622423017,
+     0.05429148129735612,
+     0.05416365835164122
+    ],
+    "batch_law": "throughput",
+    "batch_size": 64,
+    "epoch_rows": [
+     6172
+    ],
+    "epoch_steps": [
+     97
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 193,
+    "total_steps": 97,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 12345,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.13944687170360884,
+    "alpha_steps": [
+     0,
+     1,
+     540,
+     1080,
+     1081
+    ],
+    "alphas": [
+     0.13944687170360884,
+     0.13944660670759215,
+     0.07678696273998845,
+     0.01394495216637757,
+     0.013944687170360884
+    ],
+    "batch_law": "quality",
+    "batch_size": 16,
+    "epoch_rows": [
+     4938,
+     12345
+    ],
+    "epoch_steps": [
+     309,
+     772
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 772,
+    "total_steps": 1081,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 12345,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     73,
+     146,
+     147
+    ],
+    "alphas": [
+     1.0,
+     0.9998972383511385,
+     0.554808468674518,
+     0.10010276164886145,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 256,
+    "epoch_rows": [
+     12345,
+     12345,
+     12345
+    ],
+    "epoch_steps": [
+     49,
+     49,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 147,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 12345,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6822143896965831,
+    "alpha_steps": [
+     0,
+     1,
+     48,
+     96,
+     97
+    ],
+    "alphas": [
+     0.6822143896965831,
+     0.6820533912419847,
+     0.3801891293808068,
+     0.06838243742425673,
+     0.06822143896965831
+    ],
+    "batch_law": "throughput",
+    "batch_size": 128,
+    "epoch_rows": [
+     12345
+    ],
+    "epoch_steps": [
+     97
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 97,
+    "total_steps": 97,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 12345,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.17775589259542002,
+    "alpha_steps": [
+     0,
+     1,
+     482,
+     964,
+     965
+    ],
+    "alphas": [
+     0.17775589259542002,
+     0.17775546870728573,
+     0.09789594629632341,
+     0.017776013147676274,
+     0.017775589259542004
+    ],
+    "batch_law": "quality",
+    "batch_size": 32,
+    "epoch_rows": [
+     12345,
+     6172,
+     12345
+    ],
+    "epoch_steps": [
+     386,
+     193,
+     386
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 386,
+    "total_steps": 965,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 12345,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3083347270005504,
+    "alpha_steps": [
+     0,
+     1,
+     482,
+     964,
+     965
+    ],
+    "alphas": [
+     0.3083347270005504,
+     0.3083339917257291,
+     0.1698099536111533,
+     0.030834207974876324,
+     0.030833472700055042
+    ],
+    "batch_law": "quality",
+    "batch_size": 64,
+    "epoch_rows": [
+     12345,
+     12345,
+     12345,
+     12345,
+     12345
+    ],
+    "epoch_steps": [
+     193,
+     193,
+     193,
+     193,
+     193
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 193,
+    "total_steps": 965,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 12345,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5844912261378709,
+    "alpha_steps": [
+     0,
+     1,
+     34,
+     68,
+     69
+    ],
+    "alphas": [
+     0.5844912261378709,
+     0.5842186504904644,
+     0.3274573746174093,
+     0.05872169826119353,
+     0.05844912261378709
+    ],
+    "batch_law": "throughput",
+    "batch_size": 256,
+    "epoch_rows": [
+     4938,
+     12345
+    ],
+    "epoch_steps": [
+     20,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 69,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 12345,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.15479516906792656,
+    "alpha_steps": [
+     0,
+     1,
+     289,
+     578,
+     579
+    ],
+    "alphas": [
+     0.15479516906792656,
+     0.15479414369588052,
+     0.08532632074749555,
+     0.015480542278838712,
+     0.015479516906792657
+    ],
+    "batch_law": "quality",
+    "batch_size": 64,
+    "epoch_rows": [
+     12345,
+     12345,
+     12345
+    ],
+    "epoch_steps": [
+     193,
+     193,
+     193
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 193,
+    "total_steps": 579,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 12345,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4309843207350413,
+    "alpha_steps": [
+     0,
+     1,
+     612,
+     1224,
+     1225
+    ],
+    "alphas": [
+     0.4309843207350413,
+     0.43098368295442063,
+     0.23729006602147865,
+     0.043099069854124816,
+     0.04309843207350413
+    ],
+    "batch_law": "quality",
+    "batch_size": 256,
+    "epoch_rows": [
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345,
+     12345
+    ],
+    "epoch_steps": [
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 1225,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 12345,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2296118955393588,
+    "alpha_steps": [
+     0,
+     1,
+     31,
+     62,
+     63
+    ],
+    "alphas": [
+     0.2296118955393588,
+     0.22948345398550618,
+     0.12886251507083618,
+     0.02308963110778848,
+     0.02296118955393588
+    ],
+    "batch_law": "throughput",
+    "batch_size": 512,
+    "epoch_rows": [
+     12345,
+     6172,
+     12345
+    ],
+    "epoch_steps": [
+     25,
+     13,
+     25
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 63,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 12345,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.06125490958132745,
+    "alpha_steps": [
+     0,
+     1,
+     242,
+     484,
+     485
+    ],
+    "alphas": [
+     0.06125490958132745,
+     0.06125433130132935,
+     0.03377947546238768,
+     0.006126069238130836,
+     0.006125490958132745
+    ],
+    "batch_law": "quality",
+    "batch_size": 128,
+    "epoch_rows": [
+     12345,
+     12345,
+     12345,
+     12345,
+     12345
+    ],
+    "epoch_steps": [
+     97,
+     97,
+     97,
+     97,
+     97
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 97,
+    "total_steps": 485,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 12345,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.012016804281535216,
+    "alpha_steps": [
+     0,
+     1,
+     193,
+     385,
+     386
+    ],
+    "alphas": [
+     0.012016804281535216,
+     0.012016625182088308,
+     0.00660924235484437,
+     0.00120185952760043,
+     0.0012016804281535216
+    ],
+    "batch_law": "quality",
+    "batch_size": 16,
+    "epoch_rows": [
+     6172
+    ],
+    "epoch_steps": [
+     386
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 772,
+    "total_steps": 386,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 12345,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     73,
+     146,
+     147
+    ],
+    "alphas": [
+     1.0,
+     0.9998972383511385,
+     0.554808468674518,
+     0.10010276164886145,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 2048,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     49,
+     49,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 147,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 100000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     612,
+     1224,
+     1225
+    ],
+    "alphas": [
+     1.0,
+     0.9999985201767443,
+     0.5505770270639586,
+     0.10000147982325575,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 2048,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 1225,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 100000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     49,
+     97,
+     98
+    ],
+    "alphas": [
+     1.0,
+     0.9997687972903095,
+     0.55,
+     0.10023120270969045,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1024,
+    "epoch_rows": [
+     100000
+    ],
+    "epoch_steps": [
+     98
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 98,
+    "total_steps": 98,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 100000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     62,
+     124,
+     125
+    ],
+    "alphas": [
+     1.0,
+     0.999857885177485,
+     0.5556547179475088,
+     0.10014211482251503,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4096,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     25,
+     25,
+     25,
+     25,
+     25
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 125,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 2,
+    "n": 100000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.15348825025724244,
+    "alpha_steps": [
+     0,
+     1,
+     391,
+     781,
+     782
+    ],
+    "alphas": [
+     0.15348825025724244,
+     0.153487692887603,
+     0.08441853764148335,
+     0.015349382395363683,
+     0.015348825025724246
+    ],
+    "batch_law": "quality",
+    "batch_size": 64,
+    "epoch_rows": [
+     50000
+    ],
+    "epoch_steps": [
+     782
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1563,
+    "total_steps": 782,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 2,
+    "n": 100000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     69,
+     137,
+     138
+    ],
+    "alphas": [
+     1.0,
+     0.9998833981786072,
+     0.55,
+     0.10011660182139288,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1024,
+    "epoch_rows": [
+     40000,
+     100000
+    ],
+    "epoch_steps": [
+     40,
+     98
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 98,
+    "total_steps": 138,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 100000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     87,
+     174,
+     175
+    ],
+    "alphas": [
+     1.0,
+     0.9999274905680762,
+     0.5540391363164491,
+     0.10007250943192382,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7,
+     7
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 175,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 100000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1266365641098312,
+    "alpha_steps": [
+     0,
+     1,
+     391,
+     781,
+     782
+    ],
+    "alphas": [
+     0.1266365641098312,
+     0.1266361042480766,
+     0.06965011026040717,
+     0.012664116272737745,
+     0.012663656410983121
+    ],
+    "batch_law": "quality",
+    "batch_size": 128,
+    "epoch_rows": [
+     100000
+    ],
+    "epoch_steps": [
+     782
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 782,
+    "total_steps": 782,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 100000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.21454290900489315,
+    "alpha_steps": [
+     0,
+     1,
+     489,
+     977,
+     978
+    ],
+    "alphas": [
+     0.21454290900489315,
+     0.21454241090282444,
+     0.11799859995269124,
+     0.021454789002558025,
+     0.021454290900489316
+    ],
+    "batch_law": "quality",
+    "batch_size": 256,
+    "epoch_rows": [
+     100000,
+     50000,
+     100000
+    ],
+    "epoch_steps": [
+     391,
+     196,
+     391
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 391,
+    "total_steps": 978,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 100000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1982647526897961,
+    "alpha_steps": [
+     0,
+     1,
+     24,
+     48,
+     49
+    ],
+    "alphas": [
+     0.1982647526897961,
+     0.19808144240059294,
+     0.11190522812464078,
+     0.020009785558182766,
+     0.019826475268979613
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1024,
+    "epoch_rows": [
+     50000
+    ],
+    "epoch_steps": [
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 98,
+    "total_steps": 49,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 256,
+    "n": 100000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.051044187879979094,
+    "alpha_steps": [
+     0,
+     1,
+     274,
+     547,
+     548
+    ],
+    "alphas": [
+     0.051044187879979094,
+     0.05104381042404658,
+     0.028074303333988505,
+     0.005104796243930426,
+     0.0051044187879979094
+    ],
+    "batch_law": "quality",
+    "batch_size": 256,
+    "epoch_rows": [
+     40000,
+     100000
+    ],
+    "epoch_steps": [
+     157,
+     391
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 391,
+    "total_steps": 548,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 256,
+    "n": 100000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.0878977221077138,
+    "alpha_steps": [
+     0,
+     1,
+     294,
+     587,
+     588
+    ],
+    "alphas": [
+     0.0878977221077138,
+     0.08789715755539101,
+     0.04834374715924259,
+     0.008790336763094169,
+     0.008789772210771379
+    ],
+    "batch_law": "quality",
+    "batch_size": 512,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     196,
+     196,
+     196
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 196,
+    "total_steps": 588,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 100000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.09409097271197103,
+    "alpha_steps": [
+     0,
+     1,
+     12,
+     24,
+     25
+    ],
+    "alphas": [
+     0.09409097271197103,
+     0.0937571017714207,
+     0.05440864446840547,
+     0.00974296821174745,
+     0.009409097271197105
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4096,
+    "epoch_rows": [
+     100000
+    ],
+    "epoch_steps": [
+     25
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 25,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 16384,
+    "n": 100000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.024516083348852132,
+    "alpha_steps": [
+     0,
+     1,
+     122,
+     244,
+     245
+    ],
+    "alphas": [
+     0.024516083348852132,
+     0.024515176374025588,
+     0.013554577594636791,
+     0.002452515309711758,
+     0.0024516083348852134
+    ],
+    "batch_law": "quality",
+    "batch_size": 1024,
+    "epoch_rows": [
+     100000,
+     50000,
+     100000
+    ],
+    "epoch_steps": [
+     98,
+     49,
+     98
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 98,
+    "total_steps": 245,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 16384,
+    "n": 100000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.04252550931572228,
+    "alpha_steps": [
+     0,
+     1,
+     122,
+     244,
+     245
+    ],
+    "alphas": [
+     0.04252550931572228,
+     0.04252393608047558,
+     0.02351172116562394,
+     0.004254124166818924,
+     0.004252550931572228
+    ],
+    "batch_law": "quality",
+    "batch_size": 2048,
+    "epoch_rows": [
+     100000,
+     100000,
+     100000,
+     100000,
+     100000
+    ],
+    "epoch_steps": [
+     49,
+     49,
+     49,
+     49,
+     49
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 49,
+    "total_steps": 245,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 16384,
+    "n": 100000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     86,
+     171,
+     172
+    ],
+    "alphas": [
+     1.0,
+     0.9999249391815115,
+     0.55,
+     0.10007506081848859,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 8192,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     49,
+     123
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 123,
+    "total_steps": 172,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     733,
+     1466,
+     1467
+    ],
+    "alphas": [
+     1.0,
+     0.9999989681374044,
+     0.550481839271975,
+     0.10000103186259562,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 2048,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     489,
+     489,
+     489
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 489,
+    "total_steps": 1467,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 1000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     200,
+     399,
+     400
+    ],
+    "alphas": [
+     1.0,
+     0.9999861209401554,
+     0.55,
+     0.10001387905984466,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 65536,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 16,
+    "total_steps": 400,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 1000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     77,
+     154,
+     155
+    ],
+    "alphas": [
+     1.0,
+     0.9999075719055307,
+     0.554560298373525,
+     0.10009242809446924,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     1000000,
+     500000,
+     1000000
+    ],
+    "epoch_steps": [
+     62,
+     31,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 155,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 2,
+    "n": 1000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     612,
+     1224,
+     1225
+    ],
+    "alphas": [
+     1.0,
+     0.9999985201767443,
+     0.5505770270639586,
+     0.10000147982325575,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 4096,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     245,
+     245,
+     245,
+     245,
+     245
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 245,
+    "total_steps": 1225,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 2,
+    "n": 1000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     61,
+     122,
+     123
+    ],
+    "alphas": [
+     1.0,
+     0.9998532262363854,
+     0.5557466596221883,
+     0.10014677376361464,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4096,
+    "epoch_rows": [
+     500000
+    ],
+    "epoch_steps": [
+     123
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 245,
+    "total_steps": 123,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 1000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     93,
+     185,
+     186
+    ],
+    "alphas": [
+     1.0,
+     0.9999358131518694,
+     0.55,
+     0.10006418684813059,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     62,
+     62,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 186,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 1000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     775,
+     1549,
+     1550
+    ],
+    "alphas": [
+     1.0,
+     0.9999990756877295,
+     0.55,
+     0.10000092431227058,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 16384,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 1550,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 1000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.29228803262731523,
+    "alpha_steps": [
+     0,
+     1,
+     488,
+     976,
+     977
+    ],
+    "alphas": [
+     0.29228803262731523,
+     0.29228735263532685,
+     0.1609698879005985,
+     0.029229483254719926,
+     0.029228803262731525
+    ],
+    "batch_law": "quality",
+    "batch_size": 1024,
+    "epoch_rows": [
+     1000000
+    ],
+    "epoch_steps": [
+     977
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 977,
+    "total_steps": 977,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 1000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     40,
+     79,
+     80
+    ],
+    "alphas": [
+     1.0,
+     0.9996530663083254,
+     0.55,
+     0.1003469336916747,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 65536,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     16,
+     16,
+     16,
+     16,
+     16
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 16,
+    "total_steps": 80,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.07037939231360037,
+    "alpha_steps": [
+     0,
+     1,
+     244,
+     488,
+     489
+    ],
+    "alphas": [
+     0.07037939231360037,
+     0.07037873871883676,
+     0.03881040028242317,
+     0.007038592826123636,
+     0.007037939231360037
+    ],
+    "batch_law": "quality",
+    "batch_size": 1024,
+    "epoch_rows": [
+     500000
+    ],
+    "epoch_steps": [
+     489
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 977,
+    "total_steps": 489,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.11781435604616093,
+    "alpha_steps": [
+     0,
+     1,
+     342,
+     684,
+     685
+    ],
+    "alphas": [
+     0.11781435604616093,
+     0.11781379847722069,
+     0.06491946953048158,
+     0.011781993173556327,
+     0.011781435604616093
+    ],
+    "batch_law": "quality",
+    "batch_size": 2048,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     196,
+     489
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 489,
+    "total_steps": 685,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     50,
+     99,
+     100
+    ],
+    "alphas": [
+     1.0,
+     0.9997779521645792,
+     0.55,
+     0.10022204783542078,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 262144,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 4,
+    "total_steps": 100,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 16384,
+    "n": 1000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.03340011470432631,
+    "alpha_steps": [
+     0,
+     1,
+     122,
+     244,
+     245
+    ],
+    "alphas": [
+     0.03340011470432631,
+     0.03339887906391795,
+     0.018466426304214585,
+     0.0033412471108409895,
+     0.0033400114704326307
+    ],
+    "batch_law": "quality",
+    "batch_size": 4096,
+    "epoch_rows": [
+     1000000
+    ],
+    "epoch_steps": [
+     245
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 245,
+    "total_steps": 245,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 16384,
+    "n": 1000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05658521944379706,
+    "alpha_steps": [
+     0,
+     1,
+     154,
+     307,
+     308
+    ],
+    "alphas": [
+     0.05658521944379706,
+     0.05658389485807424,
+     0.031121870694088387,
+     0.005659846530102525,
+     0.005658521944379706
+    ],
+    "batch_law": "quality",
+    "batch_size": 8192,
+    "epoch_rows": [
+     1000000,
+     500000,
+     1000000
+    ],
+    "epoch_steps": [
+     123,
+     62,
+     123
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 123,
+    "total_steps": 308,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 16384,
+    "n": 1000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.03501196052114384,
+    "alpha_steps": [
+     0,
+     1,
+     8,
+     15,
+     16
+    ],
+    "alphas": [
+     0.03501196052114384,
+     0.03470922526936771,
+     0.019256578286629113,
+     0.003803931303890509,
+     0.003501196052114384
+    ],
+    "batch_law": "throughput",
+    "batch_size": 32768,
+    "epoch_rows": [
+     500000
+    ],
+    "epoch_steps": [
+     16
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 31,
+    "total_steps": 16,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1000000,
+    "n": 1000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.009013992989887882,
+    "alpha_steps": [
+     0,
+     1,
+     86,
+     171,
+     172
+    ],
+    "alphas": [
+     0.009013992989887882,
+     0.009013316392196212,
+     0.004957696144438336,
+     0.0009020758966804596,
+     0.0009013992989887883
+    ],
+    "batch_law": "quality",
+    "batch_size": 8192,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     49,
+     123
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 123,
+    "total_steps": 172,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1000000,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.10092539390788108,
+    "alpha_steps": [
+     0,
+     1,
+     12,
+     23,
+     24
+    ],
+    "alphas": [
+     0.10092539390788108,
+     0.10053685007677796,
+     0.0555089666493346,
+     0.010481083221891231,
+     0.010092539390788108
+    ],
+    "batch_law": "throughput",
+    "batch_size": 131072,
+    "epoch_rows": [
+     1000000,
+     1000000,
+     1000000
+    ],
+    "epoch_steps": [
+     8,
+     8,
+     8
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 8,
+    "total_steps": 24,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 1000000,
+    "n": 1000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     76,
+     152,
+     153
+    ],
+    "alphas": [
+     1.0,
+     0.9999051397766161,
+     0.5546199080360305,
+     0.1000948602233839,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 65536,
+    "epoch_rows": [
+     10000000
+    ],
+    "epoch_steps": [
+     153
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 153,
+    "total_steps": 153,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 10000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     764,
+     1527,
+     1528
+    ],
+    "alphas": [
+     1.0,
+     0.9999990488798073,
+     0.55,
+     0.10000095112019271,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 16384,
+    "epoch_rows": [
+     10000000,
+     5000000,
+     10000000
+    ],
+    "epoch_steps": [
+     611,
+     306,
+     611
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 611,
+    "total_steps": 1528,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1,
+    "n": 10000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     192,
+     384,
+     385
+    ],
+    "alphas": [
+     1.0,
+     0.9999850183931973,
+     0.551835990612885,
+     0.1000149816068027,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 131072,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     77,
+     77,
+     77,
+     77,
+     77
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 77,
+    "total_steps": 385,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 10000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     107,
+     214,
+     215
+    ],
+    "alphas": [
+     1.0,
+     0.9999519605953705,
+     0.5532876839935779,
+     0.10004803940462947,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 65536,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     62,
+     153
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 153,
+    "total_steps": 215,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     916,
+     1832,
+     1833
+    ],
+    "alphas": [
+     1.0,
+     0.9999993390673184,
+     0.5503856291655984,
+     0.10000066093268159,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 16384,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     611,
+     611,
+     611
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 611,
+    "total_steps": 1833,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 2,
+    "n": 10000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1912,
+     3824,
+     3825
+    ],
+    "alphas": [
+     1.0,
+     0.9999998482183183,
+     0.550184799562664,
+     0.10000015178168163,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 65536,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153,
+     153
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 153,
+    "total_steps": 3825,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 10000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     96,
+     192,
+     193
+    ],
+    "alphas": [
+     1.0,
+     0.9999403846557507,
+     0.5536624380480878,
+     0.10005961534424924,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 131072,
+    "epoch_rows": [
+     10000000,
+     5000000,
+     10000000
+    ],
+    "epoch_steps": [
+     77,
+     39,
+     77
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 77,
+    "total_steps": 193,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 10000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     765,
+     1529,
+     1530
+    ],
+    "alphas": [
+     1.0,
+     0.99999905136477,
+     0.55,
+     0.10000094863523007,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 32768,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     306,
+     306,
+     306,
+     306,
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 306,
+    "total_steps": 1530,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 10000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.38892379499138835,
+    "alpha_steps": [
+     0,
+     1,
+     610,
+     1220,
+     1221
+    ],
+    "alphas": [
+     0.38892379499138835,
+     0.38892321567580523,
+     0.21413324199958522,
+     0.03889295881472195,
+     0.03889237949913884
+    ],
+    "batch_law": "quality",
+    "batch_size": 4096,
+    "epoch_rows": [
+     5000000
+    ],
+    "epoch_steps": [
+     1221
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2442,
+    "total_steps": 1221,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 10000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     58,
+     116,
+     117
+    ],
+    "alphas": [
+     1.0,
+     0.9998377874518984,
+     0.5560413428410289,
+     0.10016221254810159,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 262144,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     39,
+     39,
+     39
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 39,
+    "total_steps": 117,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 10000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     962,
+     1924,
+     1925
+    ],
+    "alphas": [
+     1.0,
+     0.9999994007325358,
+     0.5503671991005785,
+     0.10000059926746431,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 131072,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77,
+     77
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 77,
+    "total_steps": 1925,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 256,
+    "n": 10000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2817707204858023,
+    "alpha_steps": [
+     0,
+     1,
+     305,
+     610,
+     611
+    ],
+    "alphas": [
+     0.2817707204858023,
+     0.28176904440578365,
+     0.15529987297150075,
+     0.02817874812859892,
+     0.028177072048580235
+    ],
+    "batch_law": "quality",
+    "batch_size": 16384,
+    "epoch_rows": [
+     10000000
+    ],
+    "epoch_steps": [
+     611
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 611,
+    "total_steps": 611,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 10000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.7892016135395084,
+    "alpha_steps": [
+     0,
+     1,
+     50,
+     99,
+     100
+    ],
+    "alphas": [
+     0.7892016135395084,
+     0.7890263730295113,
+     0.4340608874467296,
+     0.07909540186394787,
+     0.07892016135395084
+    ],
+    "batch_law": "throughput",
+    "batch_size": 524288,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     20,
+     20,
+     20,
+     20,
+     20
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 20,
+    "total_steps": 100,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.04444280269427731,
+    "alpha_steps": [
+     0,
+     1,
+     153,
+     305,
+     306
+    ],
+    "alphas": [
+     0.04444280269427731,
+     0.044441748702955995,
+     0.024443541481852522,
+     0.004445334260749046,
+     0.004444280269427731
+    ],
+    "batch_law": "quality",
+    "batch_size": 16384,
+    "epoch_rows": [
+     5000000
+    ],
+    "epoch_steps": [
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 611,
+    "total_steps": 306,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4837333784435927,
+    "alpha_steps": [
+     0,
+     1,
+     27,
+     54,
+     55
+    ],
+    "alphas": [
+     0.4837333784435927,
+     0.48337836495312736,
+     0.2722694398604246,
+     0.048728351334824636,
+     0.04837333784435927
+    ],
+    "batch_law": "throughput",
+    "batch_size": 262144,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     16,
+     39
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 39,
+    "total_steps": 55,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6485693728711894,
+    "alpha_steps": [
+     0,
+     1,
+     37,
+     74,
+     75
+    ],
+    "alphas": [
+     0.6485693728711894,
+     0.6483133653814812,
+     0.3628253305377235,
+     0.06511294477682715,
+     0.06485693728711894
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4194304,
+    "epoch_rows": [
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "epoch_steps": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 75,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 1000000,
+    "n": 10000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.011550414230935144,
+    "alpha_steps": [
+     0,
+     1,
+     153,
+     305,
+     306
+    ],
+    "alphas": [
+     0.011550414230935144,
+     0.011550140304998457,
+     0.00635272782701433,
+     0.0011553153490302009,
+     0.0011550414230935145
+    ],
+    "batch_law": "quality",
+    "batch_size": 32768,
+    "epoch_rows": [
+     10000000
+    ],
+    "epoch_steps": [
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 306,
+    "total_steps": 306,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 1000000,
+    "n": 10000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.12723439263988257,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.12723439263988257,
+     0.12712141203540847,
+     0.06997891595193542,
+     0.012836419868462344,
+     0.012723439263988258
+    ],
+    "batch_law": "throughput",
+    "batch_size": 524288,
+    "epoch_rows": [
+     10000000,
+     5000000,
+     10000000
+    ],
+    "epoch_steps": [
+     20,
+     10,
+     20
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 20,
+    "total_steps": 50,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 1000000,
+    "n": 10000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     119,
+     238,
+     239
+    ],
+    "alphas": [
+     1.0,
+     0.9999611241221995,
+     0.5529575450132005,
+     0.1000388758778005,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 2097152,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     239
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 477,
+    "total_steps": 239,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1335,
+     2670,
+     2671
+    ],
+    "alphas": [
+     1.0,
+     0.999999688732027,
+     0.5502646418219068,
+     0.1000003112679729,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 524288,
+    "epoch_rows": [
+     400000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     763,
+     1908
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 1908,
+    "total_steps": 2671,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 1,
+    "n": 1000000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1431,
+     2861,
+     2862
+    ],
+    "alphas": [
+     1.0,
+     0.999999728891608,
+     0.55,
+     0.10000027110839194,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 1048576,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     954,
+     954,
+     954
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 954,
+    "total_steps": 2862,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 1,
+    "n": 1000000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     119,
+     238,
+     239
+    ],
+    "alphas": [
+     1.0,
+     0.9999611241221995,
+     0.5529575450132005,
+     0.1000388758778005,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4194304,
+    "epoch_rows": [
+     1000000000
+    ],
+    "epoch_steps": [
+     239
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 239,
+    "total_steps": 239,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 1000000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1192,
+     2384,
+     2385
+    ],
+    "alphas": [
+     1.0,
+     0.9999996096039329,
+     0.5502963766440063,
+     0.10000039039606717,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 1048576,
+    "epoch_rows": [
+     1000000000,
+     500000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     954,
+     477,
+     954
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 954,
+    "total_steps": 2385,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 1000000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     2385,
+     4769,
+     4770
+    ],
+    "alphas": [
+     1.0,
+     0.9999999024009726,
+     0.55,
+     0.10000009759902737,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 1048576,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     954,
+     954,
+     954,
+     954,
+     954
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 954,
+    "total_steps": 4770,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 2,
+    "n": 1000000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     167,
+     334,
+     335
+    ],
+    "alphas": [
+     1.0,
+     0.9999802125665791,
+     0.5521100171846944,
+     0.1000197874334209,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4194304,
+    "epoch_rows": [
+     400000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     96,
+     239
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 239,
+    "total_steps": 335,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 1000000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1431,
+     2861,
+     2862
+    ],
+    "alphas": [
+     1.0,
+     0.999999728891608,
+     0.55,
+     0.10000027110839194,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 1048576,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     954,
+     954,
+     954
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 954,
+    "total_steps": 2862,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 1000000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1500,
+     2999,
+     3000
+    ],
+    "alphas": [
+     1.0,
+     0.9999997532599125,
+     0.55,
+     0.10000024674008746,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 8388608,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120,
+     120
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 120,
+    "total_steps": 3000,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     75,
+     149,
+     150
+    ],
+    "alphas": [
+     1.0,
+     0.9999013075636805,
+     0.55,
+     0.10009869243631953,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16777216,
+    "epoch_rows": [
+     1000000000,
+     500000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     60,
+     30,
+     60
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 60,
+    "total_steps": 150,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 1000000000,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     1192,
+     2384,
+     2385
+    ],
+    "alphas": [
+     1.0,
+     0.9999996096039329,
+     0.5502963766440063,
+     0.10000039039606717,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 2097152,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     477,
+     477,
+     477,
+     477,
+     477
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 477,
+    "total_steps": 2385,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 256,
+    "n": 1000000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     60,
+     119,
+     120
+    ],
+    "alphas": [
+     1.0,
+     0.9998457962390007,
+     0.55,
+     0.10015420376099923,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 4194304,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     120
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 239,
+    "total_steps": 120,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 256,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     45,
+     89,
+     90
+    ],
+    "alphas": [
+     1.0,
+     0.9997258721585931,
+     0.55,
+     0.10027412784140691,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 33554432,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     30,
+     30,
+     30
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 30,
+    "total_steps": 90,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 17,
+    "k": 16384,
+    "n": 1000000000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     750,
+     1499,
+     1500
+    ],
+    "alphas": [
+     1.0,
+     0.9999990130399208,
+     0.55,
+     0.10000098696007932,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 16777216,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60,
+     60
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 60,
+    "total_steps": 1500,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 17,
+    "k": 16384,
+    "n": 1000000000,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     60,
+     119,
+     120
+    ],
+    "alphas": [
+     1.0,
+     0.9998457962390007,
+     0.55,
+     0.10015420376099923,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 8388608,
+    "epoch_rows": [
+     1000000000
+    ],
+    "epoch_steps": [
+     120
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 120,
+    "total_steps": 120,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 16384,
+    "n": 1000000000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     37,
+     74,
+     75
+    ],
+    "alphas": [
+     1.0,
+     0.9996052735444863,
+     0.5594240889475106,
+     0.10039472645551373,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 67108864,
+    "epoch_rows": [
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     15,
+     15,
+     15,
+     15,
+     15
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 15,
+    "total_steps": 75,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 5.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.0354734113957936,
+    "alpha_steps": [
+     0,
+     1,
+     238,
+     476,
+     477
+    ],
+    "alphas": [
+     0.0354734113957936,
+     0.03547306517998759,
+     0.019562943629581758,
+     0.003547687355385372,
+     0.0035473411395793605
+    ],
+    "batch_law": "quality",
+    "batch_size": 1048576,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     477
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 954,
+    "total_steps": 477,
+    "unused_threshold": 0.1
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 128,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.059382114323092136,
+    "alpha_steps": [
+     0,
+     1,
+     334,
+     667,
+     668
+    ],
+    "alphas": [
+     0.059382114323092136,
+     0.05938181880491798,
+     0.032660162877700676,
+     0.0059385069504833635,
+     0.005938211432309214
+    ],
+    "batch_law": "quality",
+    "batch_size": 2097152,
+    "epoch_rows": [
+     400000000,
+     1000000000
+    ],
+    "epoch_steps": [
+     191,
+     477
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 477,
+    "total_steps": 668,
+    "unused_threshold": 0.0
+   },
+   "group": "grid",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.023771428914239005,
+    "alpha_steps": [
+     0,
+     1,
+     250,
+     499,
+     500
+    ],
+    "alphas": [
+     0.023771428914239005,
+     0.02377121776179418,
+     0.013074285902831453,
+     0.0023773540438687246,
+     0.0023771428914239005
+    ],
+    "batch_law": "quality",
+    "batch_size": 2,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     500
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 500,
+    "total_steps": 500,
+    "unused_threshold": 0.0
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.023771428914239005,
+    "alpha_steps": [
+     0,
+     1,
+     250,
+     499,
+     500
+    ],
+    "alphas": [
+     0.023771428914239005,
+     0.02377121776179418,
+     0.013074285902831453,
+     0.0023773540438687246,
+     0.0023771428914239005
+    ],
+    "batch_law": "quality",
+    "batch_size": 2,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     500
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 500,
+    "total_steps": 500,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.023771428914239005,
+    "alpha_steps": [
+     0,
+     1,
+     250,
+     499,
+     500
+    ],
+    "alphas": [
+     0.023771428914239005,
+     0.02377121776179418,
+     0.013074285902831453,
+     0.0023773540438687246,
+     0.0023771428914239005
+    ],
+    "batch_law": "quality",
+    "batch_size": 2,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     500
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 500,
+    "total_steps": 500,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1545635925204886,
+    "alpha_steps": [
+     0,
+     1,
+     31,
+     62,
+     63
+    ],
+    "alphas": [
+     0.1545635925204886,
+     0.15447713189550338,
+     0.08674399566184456,
+     0.015542819877034068,
+     0.01545635925204886
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     63
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 63,
+    "total_steps": 63,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 17,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.1545635925204886,
+    "alpha_steps": [
+     0,
+     1,
+     31,
+     62,
+     63
+    ],
+    "alphas": [
+     0.1545635925204886,
+     0.15447713189550338,
+     0.08674399566184456,
+     0.015542819877034068,
+     0.01545635925204886
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16,
+    "epoch_rows": [
+     1000
+    ],
+    "epoch_steps": [
+     63
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 63,
+    "total_steps": 63,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.07439678019642468,
+    "alpha_steps": [
+     0,
+     1,
+     214,
+     428,
+     429
+    ],
+    "alphas": [
+     0.07439678019642468,
+     0.0743958825198783,
+     0.04104081154992176,
+     0.0074405756961888414,
+     0.007439678019642468
+    ],
+    "batch_law": "quality",
+    "batch_size": 32768,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     123,
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 306,
+    "total_steps": 429,
+    "unused_threshold": 0.0
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 2,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.07439678019642468,
+    "alpha_steps": [
+     0,
+     1,
+     214,
+     428,
+     429
+    ],
+    "alphas": [
+     0.07439678019642468,
+     0.0743958825198783,
+     0.04104081154992176,
+     0.0074405756961888414,
+     0.007439678019642468
+    ],
+    "batch_law": "quality",
+    "batch_size": 32768,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     123,
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 306,
+    "total_steps": 429,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 3,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.07439678019642468,
+    "alpha_steps": [
+     0,
+     1,
+     214,
+     428,
+     429
+    ],
+    "alphas": [
+     0.07439678019642468,
+     0.0743958825198783,
+     0.04104081154992176,
+     0.0074405756961888414,
+     0.007439678019642468
+    ],
+    "batch_law": "quality",
+    "batch_size": 32768,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     123,
+     306
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 306,
+    "total_steps": 429,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.4837333784435927,
+    "alpha_steps": [
+     0,
+     1,
+     27,
+     54,
+     55
+    ],
+    "alphas": [
+     0.4837333784435927,
+     0.48337836495312736,
+     0.2722694398604246,
+     0.048728351334824636,
+     0.04837333784435927
+    ],
+    "batch_law": "throughput",
+    "batch_size": 262144,
+    "epoch_rows": [
+     4000000,
+     10000000
+    ],
+    "epoch_steps": [
+     16,
+     39
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 39,
+    "total_steps": 55,
+    "unused_threshold": 0.1
+   },
+   "group": "auto_boundary",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 128,
+    "k": 16384,
+    "n": 10000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2922780667382922,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.2922780667382922,
+     0.253755248048294,
+     0.16075293670606072,
+     0.0677506253638274,
+     0.029227806673829224
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     3
+    ],
+    "epoch_steps": [
+     1,
+     3
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 3,
+    "total_steps": 4,
+    "unused_threshold": 0.1
+   },
+   "group": "k_equals_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 3,
+    "n": 3,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.15053933394193825,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3,
+     4
+    ],
+    "alphas": [
+     0.15053933394193825,
+     0.13069795640760887,
+     0.08279663366806604,
+     0.03489531092852321,
+     0.015053933394193825
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     4
+    ],
+    "epoch_steps": [
+     4
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 7,
+    "total_steps": 4,
+    "unused_threshold": 0.1
+   },
+   "group": "k_equals_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 7,
+    "n": 7,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.011248010787520505,
+    "alpha_steps": [
+     0,
+     1,
+     125,
+     249,
+     250
+    ],
+    "alphas": [
+     0.011248010787520505,
+     0.01124761114447926,
+     0.006186405933136278,
+     0.0011252007217932966,
+     0.0011248010787520506
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     100,
+     50,
+     100
+    ],
+    "epoch_steps": [
+     100,
+     50,
+     100
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 100,
+    "total_steps": 250,
+    "unused_threshold": 0.1
+   },
+   "group": "k_equals_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 100,
+    "n": 100,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.016416307818579355,
+    "alpha_steps": [
+     0,
+     1,
+     94,
+     188,
+     189
+    ],
+    "alphas": [
+     0.016416307818579355,
+     0.016415287292417827,
+     0.009090365441066556,
+     0.0016426513080194615,
+     0.0016416307818579356
+    ],
+    "batch_law": "quality",
+    "batch_size": 16,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     63,
+     63,
+     63
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 63,
+    "total_steps": 189,
+    "unused_threshold": 0.1
+   },
+   "group": "k_equals_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1000,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.04225709098637013,
+    "alpha_steps": [
+     0,
+     1,
+     12,
+     24,
+     25
+    ],
+    "alphas": [
+     0.04225709098637013,
+     0.042107146583566166,
+     0.024435405156077814,
+     0.004375653501440981,
+     0.004225709098637013
+    ],
+    "batch_law": "throughput",
+    "batch_size": 512,
+    "epoch_rows": [
+     12345
+    ],
+    "epoch_steps": [
+     25
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 25,
+    "unused_threshold": 0.1
+   },
+   "group": "k_equals_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 12345,
+    "n": 12345,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.36280980567445154,
+    "alpha_steps": [
+     0,
+     1,
+     6,
+     11,
+     12
+    ],
+    "alphas": [
+     0.36280980567445154,
+     0.3572467057202902,
+     0.19954539312094835,
+     0.04184408052160646,
+     0.03628098056744516
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     5,
+     2,
+     5
+    ],
+    "epoch_steps": [
+     5,
+     2,
+     5
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 5,
+    "total_steps": 12,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 5,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.20224225287480732,
+    "alpha_steps": [
+     0,
+     1,
+     11,
+     21,
+     22
+    ],
+    "alphas": [
+     0.20224225287480732,
+     0.20131591233854954,
+     0.11123323908114403,
+     0.021150565823738535,
+     0.020224225287480732
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     9,
+     4,
+     9
+    ],
+    "epoch_steps": [
+     9,
+     4,
+     9
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 9,
+    "total_steps": 22,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 9,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2544821319180846,
+    "alpha_steps": [
+     0,
+     1,
+     14,
+     27,
+     28
+    ],
+    "alphas": [
+     0.2544821319180846,
+     0.2537620733139452,
+     0.13996517255494656,
+     0.026168271795947943,
+     0.025448213191808462
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     11,
+     6,
+     11
+    ],
+    "epoch_steps": [
+     11,
+     6,
+     11
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 11,
+    "total_steps": 28,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 11,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.2031980728697745,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     5,
+     6
+    ],
+    "alphas": [
+     0.2031980728697745,
+     0.1909475519757458,
+     0.11175894007837599,
+     0.03257032818100616,
+     0.02031980728697745
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     6
+    ],
+    "epoch_steps": [
+     6
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 13,
+    "total_steps": 6,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 13,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.39570001646379127,
+    "alpha_steps": [
+     0,
+     1,
+     3,
+     5,
+     6
+    ],
+    "alphas": [
+     0.39570001646379127,
+     0.3718438289960889,
+     0.2176350090550852,
+     0.06342618911408145,
+     0.03957000164637913
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     1,
+     5
+    ],
+    "epoch_steps": [
+     1,
+     5
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 5,
+    "total_steps": 6,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 5,
+    "nepochs": 1.1,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.3702164620231181,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.3702164620231181,
+     0.3702164620231181
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     0
+    ],
+    "epoch_steps": [
+     0
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 5,
+    "total_steps": 0,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 5,
+    "nepochs": 0.1,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.24719778058323158,
+    "alpha_steps": [
+     0,
+     1,
+     2
+    ],
+    "alphas": [
+     0.24719778058323158,
+     0.13595877932077738,
+     0.02471977805832316
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2
+    ],
+    "epoch_steps": [
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 25,
+    "total_steps": 2,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 25,
+    "nepochs": 0.1,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.25582842829505476,
+    "alpha_steps": [
+     0,
+     1,
+     8,
+     15,
+     16
+    ],
+    "alphas": [
+     0.25582842829505476,
+     0.25361637611349747,
+     0.14070563556228013,
+     0.027794895011062762,
+     0.025582842829505476
+    ],
+    "batch_law": "throughput",
+    "batch_size": 1,
+    "epoch_rows": [
+     5,
+     5,
+     1,
+     5
+    ],
+    "epoch_steps": [
+     5,
+     5,
+     1,
+     5
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 5,
+    "total_steps": 16,
+    "unused_threshold": 0.1
+   },
+   "group": "epoch_rounding",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 16,
+    "k": 2,
+    "n": 5,
+    "nepochs": 3.3,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.05,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.8244,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.8244,
+     0.08244000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 3,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.05,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 64,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.8244,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.8244,
+     0.08244000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1000,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.8244,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.8244,
+     0.08244000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 2,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.05,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 7,
+    "d": 3,
+    "k": 1,
+    "n": 1,
+    "nepochs": 1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     9,
+     17,
+     18
+    ],
+    "alphas": [
+     0.05,
+     0.049658174442774684,
+     0.027500000000000004,
+     0.00534182555722532,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     7,
+     4,
+     7
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 7,
+    "total_steps": 18,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.6088598585074628,
+    "alpha_steps": [
+     0,
+     1,
+     4,
+     7,
+     8
+    ],
+    "alphas": [
+     0.6088598585074628,
+     0.5880038448283479,
+     0.3348729221791046,
+     0.08174199952986123,
+     0.06088598585074628
+    ],
+    "batch_law": null,
+    "batch_size": 3,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     3,
+     2,
+     3
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 3,
+    "total_steps": 8,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 3,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.05,
+     0.03875000000000001,
+     0.016250000000000007,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 7,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 64,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     1.0,
+     0.775,
+     0.3250000000000001,
+     0.1
+    ],
+    "batch_law": null,
+    "batch_size": 7,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1000,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.05,
+     0.03875000000000001,
+     0.016250000000000007,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 7,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 7,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     1.0,
+     0.775,
+     0.3250000000000001,
+     0.1
+    ],
+    "batch_law": null,
+    "batch_size": 7,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 8,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.05,
+     0.03875000000000001,
+     0.016250000000000007,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 7,
+    "epoch_rows": [
+     7,
+     4,
+     7
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 19,
+    "d": 17,
+    "k": 2,
+    "n": 7,
+    "nepochs": 2.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     1500,
+     2999,
+     3000
+    ],
+    "alphas": [
+     0.05,
+     0.049999987662995626,
+     0.027500000000000004,
+     0.005000012337004374,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     1000,
+     1000,
+     1000
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1000,
+    "total_steps": 3000,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.030490077770036768,
+    "alpha_steps": [
+     0,
+     1,
+     501,
+     1001,
+     1002
+    ],
+    "alphas": [
+     0.030490077770036768,
+     0.030490010331987887,
+     0.016769542773520222,
+     0.003049075215052558,
+     0.003049007777003677
+    ],
+    "batch_law": null,
+    "batch_size": 3,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     334,
+     334,
+     334
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 334,
+    "total_steps": 1002,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 3,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     24,
+     47,
+     48
+    ],
+    "alphas": [
+     0.05,
+     0.04995182577286858,
+     0.027500000000000004,
+     0.005048174227131422,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 64,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     16,
+     16,
+     16
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 16,
+    "total_steps": 48,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 64,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     1.0,
+     0.775,
+     0.3250000000000001,
+     0.1
+    ],
+    "batch_law": null,
+    "batch_size": 1000,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1000,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.05,
+     0.03875000000000001,
+     0.016250000000000007,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1000,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1000,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     1.0,
+     0.775,
+     0.3250000000000001,
+     0.1
+    ],
+    "batch_law": null,
+    "batch_size": 1000,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1001,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "alphas": [
+     0.05,
+     0.03875000000000001,
+     0.016250000000000007,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1000,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     1,
+     1,
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 3,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 2005,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     250000000,
+     499999999,
+     500000000
+    ],
+    "alphas": [
+     0.05,
+     0.05,
+     0.027500000000000004,
+     0.005000000000000001,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     500000000
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1000000000,
+    "total_steps": 500000000,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.0001,
+    "alpha_steps": [
+     0,
+     1,
+     83333333,
+     166666666,
+     166666667
+    ],
+    "alphas": [
+     0.0001,
+     9.999999999999999e-05,
+     5.5000000424115e-05,
+     1.0000000000000011e-05,
+     1e-05
+    ],
+    "batch_law": null,
+    "batch_size": 3,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     166666667
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 333333334,
+    "total_steps": 166666667,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 3,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1,
+     3906250,
+     7812499,
+     7812500
+    ],
+    "alphas": [
+     0.05,
+     0.049999999999998185,
+     0.027500000000000004,
+     0.005000000000001819,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 64,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     7812500
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 15625000,
+    "total_steps": 7812500,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 64,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.0001,
+    "alpha_steps": [
+     0,
+     1,
+     250000,
+     499999,
+     500000
+    ],
+    "alphas": [
+     0.0001,
+     9.999999999911173e-05,
+     5.500000000000001e-05,
+     1.0000000000888266e-05,
+     1e-05
+    ],
+    "batch_law": null,
+    "batch_size": 1000,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     500000
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1000000,
+    "total_steps": 500000,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1000,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.05,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1000000000,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 1000000000,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     1.0,
+     0.1
+    ],
+    "batch_law": null,
+    "batch_size": 1000000000,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual_batch",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 1000000001,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.05,
+    "alpha_steps": [
+     0,
+     1
+    ],
+    "alphas": [
+     0.05,
+     0.005000000000000001
+    ],
+    "batch_law": null,
+    "batch_size": 1000000000,
+    "epoch_rows": [
+     500000000
+    ],
+    "epoch_steps": [
+     1
+    ],
+    "recipe_name": "manual",
+    "steps_per_pass": 1,
+    "total_steps": 1,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_batch",
+   "inputs": {
+    "alpha0": 0.05,
+    "batch_law": "auto",
+    "batch_size": 2000000005,
+    "d": 2,
+    "k": 1000000,
+    "n": 1000000000,
+    "nepochs": 0.5,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     1.0,
+     0.9991120277927222,
+     0.55,
+     0.1008879722072778,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1.0,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     0.5,
+     0.4995560138963611,
+     0.275,
+     0.0504439861036389,
+     0.05
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 0.5,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1e-06,
+    "alpha_steps": [
+     0,
+     1,
+     25,
+     49,
+     50
+    ],
+    "alphas": [
+     1e-06,
+     9.991120277927223e-07,
+     5.5e-07,
+     1.0088797220727779e-07,
+     1e-07
+    ],
+    "batch_law": "quality",
+    "batch_size": 1,
+    "epoch_rows": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "epoch_steps": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 2,
+    "total_steps": 50,
+    "unused_threshold": 0.0
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1e-06,
+    "batch_law": "quality",
+    "batch_size": null,
+    "d": 2,
+    "k": 2,
+    "n": 2,
+    "nepochs": 25.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     187,
+     374,
+     375
+    ],
+    "alphas": [
+     1.0,
+     0.9999842087253163,
+     0.5518849500799318,
+     0.10001579127468373,
+     0.1
+    ],
+    "batch_law": "quality",
+    "batch_size": 8,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     125,
+     125,
+     125
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 125,
+    "total_steps": 375,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1.0,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5,
+    "alpha_steps": [
+     0,
+     1,
+     187,
+     374,
+     375
+    ],
+    "alphas": [
+     0.5,
+     0.4999921043626582,
+     0.2759424750399659,
+     0.05000789563734186,
+     0.05
+    ],
+    "batch_law": "quality",
+    "batch_size": 8,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     125,
+     125,
+     125
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 125,
+    "total_steps": 375,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 0.5,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1e-06,
+    "alpha_steps": [
+     0,
+     1,
+     187,
+     374,
+     375
+    ],
+    "alphas": [
+     1e-06,
+     9.999842087253163e-07,
+     5.518849500799317e-07,
+     1.0001579127468373e-07,
+     1e-07
+    ],
+    "batch_law": "quality",
+    "batch_size": 8,
+    "epoch_rows": [
+     1000,
+     1000,
+     1000
+    ],
+    "epoch_steps": [
+     125,
+     125,
+     125
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 125,
+    "total_steps": 375,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1e-06,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1.0,
+    "alpha_steps": [
+     0,
+     1,
+     43,
+     86,
+     87
+    ],
+    "alphas": [
+     1.0,
+     0.9997066429253546,
+     0.5581243671627522,
+     0.10029335707464537,
+     0.1
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     25,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 87,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1.0,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 0.5,
+    "alpha_steps": [
+     0,
+     1,
+     43,
+     86,
+     87
+    ],
+    "alphas": [
+     0.5,
+     0.4998533214626773,
+     0.2790621835813761,
+     0.050146678537322686,
+     0.05
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     25,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 87,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 0.5,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  },
+  {
+   "expected": {
+    "alpha0": 1e-06,
+    "alpha_steps": [
+     0,
+     1,
+     43,
+     86,
+     87
+    ],
+    "alphas": [
+     1e-06,
+     9.997066429253546e-07,
+     5.581243671627522e-07,
+     1.0029335707464537e-07,
+     1e-07
+    ],
+    "batch_law": "throughput",
+    "batch_size": 16384,
+    "epoch_rows": [
+     400000,
+     1000000
+    ],
+    "epoch_steps": [
+     25,
+     62
+    ],
+    "recipe_name": "canonical_v1",
+    "steps_per_pass": 62,
+    "total_steps": 87,
+    "unused_threshold": 0.1
+   },
+   "group": "explicit_alpha",
+   "inputs": {
+    "alpha0": 1e-06,
+    "batch_law": "throughput",
+    "batch_size": null,
+    "d": 128,
+    "k": 256,
+    "n": 1000000,
+    "nepochs": 1.4,
+    "unused_threshold": null
+   }
+  }
+ ],
+ "constants": {
+  "alpha_law": [
+   0.8244,
+   -0.4617,
+   0.9003,
+   -0.4498,
+   -0.1057
+  ],
+  "alpha_min_factor": 0.1,
+  "auto_quality_max_d": 16,
+  "batch_laws": {
+   "quality": [
+    0.00439175,
+    0.134749,
+    0.876473,
+    0.813344
+   ],
+   "throughput": [
+    0.035134,
+    0.134749,
+    0.876473,
+    0.813344
+   ]
+  },
+  "check_unused_every": 5,
+  "init_usage": 1.52587890625e-05,
+  "no_revival_max_d": 2,
+  "split_epsilon": 0.0001,
+  "unused_threshold": 0.1
+ },
+ "raising_cases": [
+  {
+   "error": "KeyError",
+   "group": "unknown_batch_law",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "bogus",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ZeroDivisionError",
+   "group": "zero_batch_size",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": 0,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ZeroDivisionError",
+   "group": "zero_batch_size_given_alpha",
+   "inputs": {
+    "alpha0": 0.1,
+    "batch_law": "auto",
+    "batch_size": 0,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "TypeError",
+   "group": "negative_batch_size",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": -1,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ZeroDivisionError",
+   "group": "zero_nepochs",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 0.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "TypeError",
+   "group": "negative_nepochs",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": -1.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ZeroDivisionError",
+   "group": "zero_n",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 1,
+    "n": 0,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ZeroDivisionError",
+   "group": "zero_k",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 0,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": null
+   }
+  },
+  {
+   "error": "ValueError",
+   "group": "negative_unused_threshold",
+   "inputs": {
+    "alpha0": null,
+    "batch_law": "auto",
+    "batch_size": null,
+    "d": 16,
+    "k": 10,
+    "n": 1000,
+    "nepochs": 3.0,
+    "unused_threshold": -0.5
+   }
+  }
+ ],
+ "round_power_of_two": [
+  {
+   "input": -1.0,
+   "input_bits": "bff0000000000000",
+   "output": 1
+  },
+  {
+   "input": 0.0,
+   "input_bits": "0000000000000000",
+   "output": 1
+  },
+  {
+   "input": 0.25,
+   "input_bits": "3fd0000000000000",
+   "output": 1
+  },
+  {
+   "input": 0.5,
+   "input_bits": "3fe0000000000000",
+   "output": 1
+  },
+  {
+   "input": 1.0,
+   "input_bits": "3ff0000000000000",
+   "output": 1
+  },
+  {
+   "input": 1.0000000000000002,
+   "input_bits": "3ff0000000000001",
+   "output": 1
+  },
+  {
+   "input": 1.4,
+   "input_bits": "3ff6666666666666",
+   "output": 1
+  },
+  {
+   "input": 1.414213562373095,
+   "input_bits": "3ff6a09e667f3bcc",
+   "output": 1
+  },
+  {
+   "input": 1.4142135623730951,
+   "input_bits": "3ff6a09e667f3bcd",
+   "output": 2
+  },
+  {
+   "input": 1.4142135623730954,
+   "input_bits": "3ff6a09e667f3bce",
+   "output": 2
+  },
+  {
+   "input": 1.5,
+   "input_bits": "3ff8000000000000",
+   "output": 2
+  },
+  {
+   "input": 1.9999999999999998,
+   "input_bits": "3fffffffffffffff",
+   "output": 2
+  },
+  {
+   "input": 2.0,
+   "input_bits": "4000000000000000",
+   "output": 2
+  },
+  {
+   "input": 2.0000000000000004,
+   "input_bits": "4000000000000001",
+   "output": 2
+  },
+  {
+   "input": 2.5,
+   "input_bits": "4004000000000000",
+   "output": 2
+  },
+  {
+   "input": 2.82842712474619,
+   "input_bits": "4006a09e667f3bcc",
+   "output": 2
+  },
+  {
+   "input": 2.8284271247461903,
+   "input_bits": "4006a09e667f3bcd",
+   "output": 4
+  },
+  {
+   "input": 2.8284271247461907,
+   "input_bits": "4006a09e667f3bce",
+   "output": 4
+  },
+  {
+   "input": 3.0,
+   "input_bits": "4008000000000000",
+   "output": 4
+  },
+  {
+   "input": 5.0,
+   "input_bits": "4014000000000000",
+   "output": 4
+  },
+  {
+   "input": 5.65685424949238,
+   "input_bits": "4016a09e667f3bcc",
+   "output": 4
+  },
+  {
+   "input": 5.656854249492381,
+   "input_bits": "4016a09e667f3bcd",
+   "output": 8
+  },
+  {
+   "input": 5.6568542494923815,
+   "input_bits": "4016a09e667f3bce",
+   "output": 8
+  },
+  {
+   "input": 6.0,
+   "input_bits": "4018000000000000",
+   "output": 8
+  },
+  {
+   "input": 7.0,
+   "input_bits": "401c000000000000",
+   "output": 8
+  },
+  {
+   "input": 11.31370849898476,
+   "input_bits": "4026a09e667f3bcc",
+   "output": 8
+  },
+  {
+   "input": 11.313708498984761,
+   "input_bits": "4026a09e667f3bcd",
+   "output": 16
+  },
+  {
+   "input": 11.313708498984763,
+   "input_bits": "4026a09e667f3bce",
+   "output": 16
+  },
+  {
+   "input": 22.62741699796952,
+   "input_bits": "4036a09e667f3bcc",
+   "output": 16
+  },
+  {
+   "input": 22.627416997969522,
+   "input_bits": "4036a09e667f3bcd",
+   "output": 32
+  },
+  {
+   "input": 22.627416997969526,
+   "input_bits": "4036a09e667f3bce",
+   "output": 32
+  },
+  {
+   "input": 181.01933598375615,
+   "input_bits": "4066a09e667f3bcc",
+   "output": 128
+  },
+  {
+   "input": 181.01933598375618,
+   "input_bits": "4066a09e667f3bcd",
+   "output": 256
+  },
+  {
+   "input": 181.0193359837562,
+   "input_bits": "4066a09e667f3bce",
+   "output": 256
+  },
+  {
+   "input": 1023.9999999999999,
+   "input_bits": "408fffffffffffff",
+   "output": 1024
+  },
+  {
+   "input": 1024.0,
+   "input_bits": "4090000000000000",
+   "output": 1024
+  },
+  {
+   "input": 1024.0000000000002,
+   "input_bits": "4090000000000001",
+   "output": 1024
+  },
+  {
+   "input": 1448.1546878700492,
+   "input_bits": "4096a09e667f3bcc",
+   "output": 1024
+  },
+  {
+   "input": 1448.1546878700494,
+   "input_bits": "4096a09e667f3bcd",
+   "output": 2048
+  },
+  {
+   "input": 1448.1546878700497,
+   "input_bits": "4096a09e667f3bce",
+   "output": 2048
+  },
+  {
+   "input": 12345.0,
+   "input_bits": "40c81c8000000000",
+   "output": 16384
+  },
+  {
+   "input": 92681.90002368315,
+   "input_bits": "40f6a09e667f3bcc",
+   "output": 65536
+  },
+  {
+   "input": 92681.90002368316,
+   "input_bits": "40f6a09e667f3bcd",
+   "output": 131072
+  },
+  {
+   "input": 92681.90002368318,
+   "input_bits": "40f6a09e667f3bce",
+   "output": 131072
+  },
+  {
+   "input": 1000000.0,
+   "input_bits": "412e848000000000",
+   "output": 1048576
+  },
+  {
+   "input": 1482910.4003789304,
+   "input_bits": "4136a09e667f3bcc",
+   "output": 1048576
+  },
+  {
+   "input": 1482910.4003789306,
+   "input_bits": "4136a09e667f3bcd",
+   "output": 2097152
+  },
+  {
+   "input": 1482910.4003789308,
+   "input_bits": "4136a09e667f3bce",
+   "output": 2097152
+  },
+  {
+   "input": 1000000000.0,
+   "input_bits": "41cdcd6500000000",
+   "output": 1073741824
+  },
+  {
+   "input": 3037000499.9760494,
+   "input_bits": "41e6a09e667f3bcc",
+   "output": 2147483648
+  },
+  {
+   "input": 3037000499.97605,
+   "input_bits": "41e6a09e667f3bcd",
+   "output": 4294967296
+  },
+  {
+   "input": 3037000499.9760504,
+   "input_bits": "41e6a09e667f3bce",
+   "output": 4294967296
+  },
+  {
+   "input": 6074000999.952099,
+   "input_bits": "41f6a09e667f3bcc",
+   "output": 4294967296
+  },
+  {
+   "input": 6074000999.9521,
+   "input_bits": "41f6a09e667f3bcd",
+   "output": 8589934592
+  },
+  {
+   "input": 6074000999.952101,
+   "input_bits": "41f6a09e667f3bce",
+   "output": 8589934592
+  },
+  {
+   "input": 1000000000000.0,
+   "input_bits": "426d1a94a2000000",
+   "output": 1099511627776
+  },
+  {
+   "input": 1554944255987.7373,
+   "input_bits": "4276a09e667f3bcc",
+   "output": 1099511627776
+  },
+  {
+   "input": 1554944255987.7375,
+   "input_bits": "4276a09e667f3bcd",
+   "output": 2199023255552
+  },
+  {
+   "input": 1554944255987.7378,
+   "input_bits": "4276a09e667f3bce",
+   "output": 2199023255552
+  },
+  {
+   "input": 1000000000000000.0,
+   "input_bits": "430c6bf526340000",
+   "output": 1125899906842624
+  },
+  {
+   "input": 6369051672525772.0,
+   "input_bits": "4336a09e667f3bcc",
+   "output": 4503599627370496
+  },
+  {
+   "input": 6369051672525773.0,
+   "input_bits": "4336a09e667f3bcd",
+   "output": 9007199254740992
+  },
+  {
+   "input": 6369051672525774.0,
+   "input_bits": "4336a09e667f3bce",
+   "output": 9007199254740992
+  },
+  {
+   "input": 9007199254740991.0,
+   "input_bits": "433fffffffffffff",
+   "output": 9007199254740992
+  },
+  {
+   "input": 9007199254740992.0,
+   "input_bits": "4340000000000000",
+   "output": 9007199254740992
+  },
+  {
+   "input": 9007199254740994.0,
+   "input_bits": "4340000000000001",
+   "output": 9007199254740992
+  },
+  {
+   "input": 1.2738103345051544e+16,
+   "input_bits": "4346a09e667f3bcc",
+   "output": 9007199254740992
+  },
+  {
+   "input": 1.2738103345051546e+16,
+   "input_bits": "4346a09e667f3bcd",
+   "output": 18014398509481984
+  },
+  {
+   "input": 1.2738103345051548e+16,
+   "input_bits": "4346a09e667f3bce",
+   "output": 18014398509481984
+  },
+  {
+   "input": 1e+18,
+   "input_bits": "43abc16d674ec800",
+   "output": 1152921504606846976
+  },
+  {
+   "input": 1.1529215046068468e+18,
+   "input_bits": "43afffffffffffff",
+   "output": 1152921504606846976
+  },
+  {
+   "input": 1.152921504606847e+18,
+   "input_bits": "43b0000000000000",
+   "output": 1152921504606846976
+  },
+  {
+   "input": 1.1529215046068472e+18,
+   "input_bits": "43b0000000000001",
+   "output": 1152921504606846976
+  },
+  {
+   "input": 1.6304772281665976e+18,
+   "input_bits": "43b6a09e667f3bcc",
+   "output": 1152921504606846976
+  },
+  {
+   "input": 1.630477228166598e+18,
+   "input_bits": "43b6a09e667f3bcd",
+   "output": 2305843009213693952
+  },
+  {
+   "input": 1.6304772281665981e+18,
+   "input_bits": "43b6a09e667f3bce",
+   "output": 2305843009213693952
+  }
+ ],
+ "schema_version": 1,
+ "source": {
+  "faiss_commit": "fc1095a9314f892938bf83f59e7ac966b5095def",
+  "generator": "tools/reference/generate_fixtures.py",
+  "reference_sha256": {
+   "__init__.py": "ad196786de8eb8ab7a229908b86ad8548a72459ade95e9e9c3275943dd50bb78",
+   "base.py": "bcffd7829ebfc25e1354308770b49e6f99d8566ba5e474a41a22e9ec414b17cd",
+   "e_means.py": "fc7750ba735b502d7831a27ccebb8c22b91c0405d74717a12c90df22eb85e06b",
+   "e_means_spherical.py": "d4e4177593f70e284bd2f6ad8812170e2a830ea62c697c514edc6298a00ea7a6"
+  }
+ }
+}
