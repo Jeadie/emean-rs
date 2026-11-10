@@ -1,0 +1,38 @@
+[package]
+name = "emeans"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.86"
+description = "e-means: mini-batch k-means with exponential-moving-average centroid updates and scaling-law hyperparameters"
+license = "Apache-2.0"
+repository = "https://github.com/Jeadie/emean-rs"
+readme = "README.md"
+keywords = ["kmeans", "clustering", "quantization", "vector", "embeddings"]
+categories = ["algorithms", "science", "mathematics"]
+exclude = [".github/", "tests/", "tools/"]
+
+[features]
+default = ["parallel"]
+## Run the nearest-centroid search and the batch statistics on all cores with rayon.
+## Results are bit-identical with and without this feature.
+parallel = ["dep:rayon"]
+
+[dependencies]
+matrixmultiply = "0.3.11"
+rayon = { version = "1.12", optional = true }
+
+[dev-dependencies]
+rayon = "1.12"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+
+[lints.rust]
+missing_docs = "warn"
+unsafe_op_in_unsafe_fn = "deny"
+unreachable_pub = "warn"
+
+[lints.clippy]
+undocumented_unsafe_blocks = "warn"
+
+[package.metadata.docs.rs]
+all-features = true
