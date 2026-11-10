@@ -52,18 +52,15 @@ pub(crate) fn fit<T: Scalar>(
     let mut session = Session::start(recipe, positions);
     let recipe = session.recipe().clone();
     let mut labels = recipe.last_epoch_is_full().then(|| vec![0u32; rows]);
-    let epochs = recipe.epoch_count();
-    for epoch in 0..epochs {
+    for epoch in recipe.plan() {
         for (position, row) in order.iter_mut().enumerate() {
             *row = position;
         }
-        Rng::new(seed, Stream::Epoch(epoch)).shuffle(&mut order);
-        let epoch_rows = recipe.rows_in_epoch(epoch).expect("epoch < epoch_count");
-        let is_last = epoch + 1 == epochs;
-        for batch in order[..epoch_rows].chunks(recipe.batch_size().get()) {
+        Rng::new(seed, Stream::Epoch(epoch.index())).shuffle(&mut order);
+        for batch in order[..epoch.rows().get()].chunks(recipe.batch_size().get()) {
             let source = data.gather(batch);
             match labels.as_mut() {
-                Some(out) if is_last => session.process(&source, |offset, segment| {
+                Some(out) if epoch.is_last() => session.process(&source, |offset, segment| {
                     for (&row, &label) in batch[offset..].iter().zip(segment) {
                         out[row] = label;
                     }

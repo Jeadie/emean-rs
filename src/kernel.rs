@@ -192,6 +192,16 @@ impl<T: Scalar> SearchCentroids<T> {
         }
     }
 
+    /// The metric that distances are measured in.
+    pub(crate) fn metric(&self) -> Metric {
+        self.metric
+    }
+
+    /// The dimension `d` of the centroids.
+    pub(crate) fn dim(&self) -> usize {
+        self.dim
+    }
+
     /// The `k × d` centroids `ĉ_j`, rounded to `T`.
     pub(crate) fn centroids(&self) -> &[T] {
         &self.centroids
@@ -319,20 +329,16 @@ impl<T: Scalar> SearchCentroids<T> {
         for (i, (label, distance)) in labels.iter_mut().zip(distances.iter_mut()).enumerate() {
             let row = source.row(start + i);
             let best = best_high[i];
-            let mut nearest = (u32::MAX, f64::INFINITY);
+            let mut nearest: Option<(u32, f64)> = None;
             for &(cluster, low) in &scratch.candidates[i] {
                 if may_be_nearest(low, best) {
                     let t = self.distance(row, cluster as usize);
-                    if t < nearest.1 || nearest.0 == u32::MAX {
-                        nearest = (cluster, t);
+                    if nearest.is_none_or(|(_, nearest)| t < nearest) {
+                        nearest = Some((cluster, t));
                     }
                 }
             }
-            debug_assert!(
-                nearest.0 != u32::MAX,
-                "the nearest centroid is always a candidate"
-            );
-            (*label, *distance) = nearest;
+            (*label, *distance) = nearest.expect("the nearest centroid is always a candidate");
         }
     }
 
@@ -347,14 +353,14 @@ impl<T: Scalar> SearchCentroids<T> {
     ) {
         for (i, (label, distance)) in labels.iter_mut().zip(distances.iter_mut()).enumerate() {
             let row = source.row(start + i);
-            let mut nearest = (0u32, f64::INFINITY);
+            let mut nearest: Option<(u32, f64)> = None;
             for cluster in 0..self.clusters {
                 let t = self.distance(row, cluster);
-                if t < nearest.1 || cluster == 0 {
-                    nearest = (cluster as u32, t);
+                if nearest.is_none_or(|(_, nearest)| t < nearest) {
+                    nearest = Some((cluster as u32, t));
                 }
             }
-            (*label, *distance) = nearest;
+            (*label, *distance) = nearest.expect("there is at least one centroid");
         }
     }
 

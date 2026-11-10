@@ -350,19 +350,60 @@ impl Recipe {
     /// The number of rows of epoch `epoch` (0-based), or `None` if the run
     /// has fewer epochs.
     pub fn rows_in_epoch(&self, epoch: u64) -> Option<usize> {
-        let count = self.epoch_count();
-        if epoch >= count {
-            None
-        } else if self.full_passes == 0 || (self.partial_rows > 0 && epoch == count - 2) {
-            Some(self.partial_rows)
-        } else {
-            Some(self.rows)
-        }
+        self.planned_epoch(epoch).map(|epoch| epoch.rows().get())
     }
 
     /// The number of rows of each epoch, in order.
     pub fn epoch_sizes(&self) -> impl Iterator<Item = usize> + '_ {
-        (0..self.epoch_count()).map(|epoch| self.rows_in_epoch(epoch).expect("epoch < epoch_count"))
+        self.plan().map(|epoch| epoch.rows().get())
+    }
+
+    /// Epoch `index` (0-based) of the plan, or `None` if the run has fewer
+    /// epochs.
+    pub(crate) fn planned_epoch(&self, index: u64) -> Option<PlannedEpoch> {
+        let count = self.epoch_count();
+        if index >= count {
+            return None;
+        }
+        let has_partial = self.partial_rows > 0;
+        let is_partial = self.full_passes == 0 || (has_partial && index == count - 2);
+        let rows = if is_partial {
+            self.partial_rows
+        } else {
+            self.rows
+        };
+        // The epochs before `index` are full passes, and the partial pass
+        // when `index` is the last full pass that follows it.
+        let partial_before = has_partial && self.full_passes > 0 && index == count - 1;
+        let full_before = index - u64::from(partial_before);
+        let (partial_rows, partial_updates) = if partial_before {
+            (self.partial_rows as u64, self.batches_in(self.partial_rows))
+        } else {
+            (0, 0)
+        };
+        // Both sums are at most the run's totals, which fit in `u64`.
+        Some(PlannedEpoch {
+            index,
+            rows: NonZeroUsize::new(rows).expect("every epoch of a plan has rows"),
+            first_row: full_before * self.rows as u64 + partial_rows,
+            first_update: full_before * self.updates_per_pass() + partial_updates,
+            is_last: index + 1 == count,
+        })
+    }
+
+    /// The epochs of the plan, in order.
+    pub(crate) fn plan(&self) -> impl Iterator<Item = PlannedEpoch> + '_ {
+        (0..self.epoch_count()).map(|index| self.planned_epoch(index).expect("index < epoch_count"))
+    }
+
+    /// Update `index` (0-based) of the run: its step size, and the revival
+    /// check that follows it, if any.
+    pub(crate) fn update(&self, index: u64) -> Update {
+        let revival_due = (index + 1) % REVIVAL_INTERVAL == 0;
+        Update {
+            alpha: self.alpha(index),
+            revival: self.revival.filter(|_| revival_due),
+        }
     }
 
     /// The number of updates of epoch `epoch`, or `None` if the run has fewer
@@ -417,6 +458,60 @@ impl Recipe {
     fn batches_in(&self, rows: usize) -> u64 {
         rows.div_ceil(self.batch_size.get()) as u64
     }
+}
+
+/// One epoch of a [`Recipe`]'s plan, with its place in the run.
+///
+/// The epoch is cut into batches of [`Recipe::batch_size`] rows; its last
+/// batch keeps the remaining rows, so it has
+/// [`Recipe::updates_in_epoch`] updates.
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub(crate) struct PlannedEpoch {
+    index: u64,
+    rows: NonZeroUsize,
+    /// The rows of the run before this epoch.
+    first_row: u64,
+    /// The updates of the run before this epoch.
+    first_update: u64,
+    is_last: bool,
+}
+
+impl PlannedEpoch {
+    /// The index of the epoch, from 0.
+    pub(crate) fn index(&self) -> u64 {
+        self.index
+    }
+
+    /// The rows of the epoch.
+    pub(crate) fn rows(&self) -> NonZeroUsize {
+        self.rows
+    }
+
+    /// The rows of the run before this epoch.
+    pub(crate) fn first_row(&self) -> u64 {
+        self.first_row
+    }
+
+    /// The updates of the run before this epoch.
+    pub(crate) fn first_update(&self) -> u64 {
+        self.first_update
+    }
+
+    /// Whether this is the last epoch, whose rows give the closing means.
+    pub(crate) fn is_last(&self) -> bool {
+        self.is_last
+    }
+}
+
+/// What one update of a run does: Algorithm 1, line 9, with step size
+/// `alpha`, then a revival of dead clusters if `revival` is set.
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub(crate) struct Update {
+    /// The step size `α(t)`.
+    pub(crate) alpha: f64,
+    /// The revival threshold, on every [`REVIVAL_INTERVAL`]th update when
+    /// revival is on.
+    pub(crate) revival: Option<Threshold>,
 }
 
 impl fmt::Display for Recipe {
@@ -582,6 +677,59 @@ mod tests {
         assert_eq!(recipe.updates_in_epoch(0), Some(2));
         assert_eq!(recipe.updates_in_epoch(1), Some(4));
         assert_eq!(recipe.total_updates(), 6);
+    }
+
+    #[test]
+    fn each_planned_epoch_starts_where_the_previous_one_ends() {
+        let size = NonZeroUsize::new(300).unwrap();
+        for epochs in [0.6, 1.0, 1.5, 2.5, 3.0, 4.25] {
+            let recipe = resolve(
+                config(4)
+                    .with_batch(Batch::Fixed(size))
+                    .with_epochs(Epochs::new(epochs).unwrap()),
+                1000,
+                8,
+            );
+            let plan: Vec<PlannedEpoch> = recipe.plan().collect();
+            let (mut rows, mut updates) = (0, 0);
+            for (index, epoch) in plan.iter().enumerate() {
+                assert_eq!(epoch.index(), index as u64, "T = {epochs}");
+                assert_eq!(
+                    (epoch.first_row(), epoch.first_update()),
+                    (rows, updates),
+                    "T = {epochs}, epoch {index}"
+                );
+                assert_eq!(epoch.is_last(), index + 1 == plan.len(), "T = {epochs}");
+                rows += epoch.rows().get() as u64;
+                updates += recipe.updates_in_epoch(epoch.index()).unwrap();
+            }
+            assert_eq!(
+                (rows, updates),
+                (recipe.total_rows(), recipe.total_updates()),
+                "T = {epochs}"
+            );
+            assert_eq!(recipe.planned_epoch(plan.len() as u64), None);
+        }
+    }
+
+    #[test]
+    fn every_fifth_update_checks_for_revival() {
+        let revived = |recipe: &Recipe| -> Vec<u64> {
+            (0..12)
+                .filter(|&t| recipe.update(t).revival.is_some())
+                .collect()
+        };
+        let threshold = Threshold::new(0.25).unwrap();
+        let on = resolve(
+            config(4).with_revival(Revival::Threshold(threshold)),
+            1000,
+            8,
+        );
+        assert_eq!(revived(&on), [4, 9]);
+        assert_eq!(on.update(4).revival, Some(threshold));
+        assert_eq!(on.update(7).alpha, on.alpha(7));
+        let off = resolve(config(4).with_revival(Revival::Off), 1000, 8);
+        assert_eq!(revived(&off), []);
     }
 
     #[test]

@@ -1,8 +1,9 @@
-//! Statistics that a run records for each epoch, and the private
-//! accumulators of a batch and an epoch.
+//! Statistics that a run records for each epoch, the sums of a batch, and
+//! the sums of the closing means.
+
+use core::num::NonZeroUsize;
 
 use crate::kernel;
-use crate::numeric::CompensatedSum;
 use crate::rows::RowSource;
 use crate::scalar::Scalar;
 
@@ -42,34 +43,55 @@ impl EpochStats {
 
 /// The per-cluster sums `s_j` (`k × d`, row-major) and counts `n_j` of the
 /// rows fed into the current batch (Algorithm 1, line 8).
+///
+/// A batch is open for `capacity` rows: the recipe's batch size, or fewer
+/// for the last batch of an epoch. It is full when it has them all.
 #[derive(Clone, Debug)]
 pub(crate) struct BatchStats {
     dim: usize,
     sums: Vec<f64>,
     counts: Vec<u64>,
     rows: usize,
+    capacity: NonZeroUsize,
 }
 
 impl BatchStats {
-    /// An empty batch for `clusters` clusters of dimension `dim`.
-    pub(crate) fn new(clusters: usize, dim: usize) -> Self {
+    /// An empty batch of `capacity` rows, for `clusters` clusters of
+    /// dimension `dim`.
+    pub(crate) fn new(clusters: usize, dim: usize, capacity: NonZeroUsize) -> Self {
         Self {
             dim,
             sums: vec![0.0; clusters * dim],
             counts: vec![0; clusters],
             rows: 0,
+            capacity,
         }
     }
 
     /// Adds each row of `source` to the cluster in `labels`.
+    ///
+    /// # Panics
+    ///
+    /// Panics if `source` has more rows than [`BatchStats::remaining`].
     pub(crate) fn add<T: Scalar, S: RowSource<T>>(&mut self, source: &S, labels: &[u32]) {
+        assert!(
+            source.len() <= self.remaining(),
+            "{} rows for a batch with room for {}",
+            source.len(),
+            self.remaining()
+        );
         kernel::accumulate(source, labels, self.dim, &mut self.sums, &mut self.counts);
         self.rows += source.len();
     }
 
-    /// The number of rows in the batch.
-    pub(crate) fn rows(&self) -> usize {
-        self.rows
+    /// The rows that complete the batch.
+    pub(crate) fn remaining(&self) -> usize {
+        self.capacity.get() - self.rows
+    }
+
+    /// Whether the batch has all its rows.
+    pub(crate) fn is_full(&self) -> bool {
+        self.rows == self.capacity.get()
     }
 
     /// The sums `s_j`, `k × d`, row-major.
@@ -82,126 +104,12 @@ impl BatchStats {
         &self.counts
     }
 
-    /// Empties the batch.
-    pub(crate) fn clear(&mut self) {
+    /// Empties the batch and opens it for `capacity` rows.
+    pub(crate) fn reopen(&mut self, capacity: NonZeroUsize) {
         self.sums.fill(0.0);
         self.counts.fill(0);
         self.rows = 0;
-    }
-}
-
-/// What the current epoch has measured so far: its rows, objective, cluster
-/// sizes, updates and revivals, and, in the last epoch only, the per-cluster
-/// sums for the closing means.
-#[derive(Clone, Debug)]
-pub(crate) struct EpochAccumulator {
-    epoch: u64,
-    /// Rows that the recipe plans for this epoch.
-    planned: usize,
-    /// Rows assigned so far.
-    assigned: usize,
-    objective: CompensatedSum,
-    counts: Vec<u64>,
-    updates: u64,
-    revivals: u64,
-    /// `Some` in the last epoch only.
-    closing_sums: Option<Vec<f64>>,
-}
-
-impl EpochAccumulator {
-    /// Starts epoch `epoch` of `planned` rows. The last epoch also keeps the
-    /// per-cluster sums for the closing means.
-    pub(crate) fn new(
-        epoch: u64,
-        planned: usize,
-        clusters: usize,
-        dim: usize,
-        is_last: bool,
-    ) -> Self {
-        Self {
-            epoch,
-            planned,
-            assigned: 0,
-            objective: CompensatedSum::default(),
-            counts: vec![0; clusters],
-            updates: 0,
-            revivals: 0,
-            closing_sums: is_last.then(|| vec![0.0; clusters * dim]),
-        }
-    }
-
-    /// The index of the epoch.
-    pub(crate) fn epoch(&self) -> u64 {
-        self.epoch
-    }
-
-    /// The rows that the recipe plans for this epoch.
-    pub(crate) fn planned(&self) -> usize {
-        self.planned
-    }
-
-    /// The rows assigned so far.
-    pub(crate) fn assigned(&self) -> usize {
-        self.assigned
-    }
-
-    /// Whether every planned row has been assigned.
-    pub(crate) fn is_complete(&self) -> bool {
-        self.assigned == self.planned
-    }
-
-    /// Records the distances of rows that were just assigned, in row order.
-    pub(crate) fn add_assigned(&mut self, distances: &[f64]) {
-        debug_assert!(self.assigned + distances.len() <= self.planned);
-        for &distance in distances {
-            self.objective.add(distance);
-        }
-        self.assigned += distances.len();
-    }
-
-    /// Records a complete batch: its cluster sizes, and its sums in the last
-    /// epoch.
-    pub(crate) fn add_batch(&mut self, batch: &BatchStats) {
-        for (total, &count) in self.counts.iter_mut().zip(batch.counts()) {
-            *total += count;
-        }
-        if let Some(sums) = &mut self.closing_sums {
-            for (total, &sum) in sums.iter_mut().zip(batch.sums()) {
-                *total += sum;
-            }
-        }
-    }
-
-    /// Records one update and the clusters it revived.
-    pub(crate) fn add_update(&mut self, revivals: u64) {
-        self.updates += 1;
-        self.revivals += revivals;
-    }
-
-    /// Ends the epoch. Returns its statistics, and the closing sums if it is
-    /// the last epoch.
-    pub(crate) fn finish(self) -> (EpochStats, Option<ClosingSums>) {
-        debug_assert!(self.is_complete());
-        let clusters = self.counts.len() as f64;
-        let squares: u128 = self
-            .counts
-            .iter()
-            .map(|&count| u128::from(count) * u128::from(count))
-            .sum();
-        let rows = self.planned as f64;
-        let stats = EpochStats {
-            epoch: self.epoch,
-            rows: self.planned,
-            updates: self.updates,
-            objective: self.objective.total(),
-            imbalance: clusters * squares as f64 / (rows * rows),
-            revivals: self.revivals,
-        };
-        let closing = self.closing_sums.map(|sums| ClosingSums {
-            counts: self.counts,
-            sums,
-        });
-        (stats, closing)
+        self.capacity = capacity;
     }
 }
 
@@ -214,6 +122,13 @@ pub(crate) struct ClosingSums {
 }
 
 impl ClosingSums {
+    /// The closing sums of an epoch: its rows per cluster and their sums
+    /// (`k × d`, row-major).
+    pub(crate) fn new(counts: Vec<u64>, sums: Vec<f64>) -> Self {
+        debug_assert_eq!(sums.len() % counts.len().max(1), 0);
+        Self { counts, sums }
+    }
+
     /// Replaces the position of each cluster that the last epoch assigned
     /// rows to with the mean of those rows. Other clusters keep `positions`.
     pub(crate) fn apply_means(&self, positions: &mut [f64], dim: usize) {
@@ -237,47 +152,39 @@ mod tests {
     use crate::rows::CheckedRows;
 
     #[test]
-    fn a_batch_sums_its_rows_and_clears() {
+    fn a_batch_fills_to_its_capacity_and_reopens_empty() {
         let data = [1.0f32, 2.0, 3.0, 4.0, 5.0, 6.0];
         let rows = CheckedRows::new(RowMatrix::new(&data, 2).unwrap(), RowNorm::Any).unwrap();
-        let mut batch = BatchStats::new(2, 2);
+        let mut batch = BatchStats::new(2, 2, NonZeroUsize::new(5).unwrap());
         batch.add(&rows, &[1, 1, 0]);
+        assert_eq!((batch.remaining(), batch.is_full()), (2, false));
         assert_eq!(
-            (batch.rows(), batch.counts(), batch.sums()),
-            (3, &[1, 2][..], &[5.0, 6.0, 4.0, 6.0][..])
+            (batch.counts(), batch.sums()),
+            (&[1, 2][..], &[5.0, 6.0, 4.0, 6.0][..])
         );
-        batch.clear();
+        batch.reopen(NonZeroUsize::new(3).unwrap());
         assert_eq!(
-            (batch.rows(), batch.counts(), batch.sums()),
-            (0, &[0, 0][..], &[0.0; 4][..])
+            (batch.remaining(), batch.counts(), batch.sums()),
+            (3, &[0, 0][..], &[0.0; 4][..])
         );
+        batch.add(&rows, &[0, 0, 0]);
+        assert!(batch.is_full());
     }
 
     #[test]
-    fn only_the_last_epoch_yields_closing_means() {
-        let data = [1.0f64, 3.0, 5.0];
+    #[should_panic(expected = "room for 2")]
+    fn a_batch_takes_no_more_than_its_capacity() {
+        let data = [1.0f64; 3];
         let rows = CheckedRows::new(RowMatrix::new(&data, 1).unwrap(), RowNorm::Any).unwrap();
-        let mut batch = BatchStats::new(2, 1);
+        let mut batch = BatchStats::new(1, 1, NonZeroUsize::new(2).unwrap());
         batch.add(&rows, &[0, 0, 0]);
-        for is_last in [false, true] {
-            let mut epoch = EpochAccumulator::new(0, 3, 2, 1, is_last);
-            epoch.add_assigned(&[1.0, 2.0, 3.0]);
-            epoch.add_batch(&batch);
-            epoch.add_update(1);
-            assert!(epoch.is_complete());
-            let (stats, closing) = epoch.finish();
-            assert_eq!(
-                (stats.rows, stats.updates, stats.revivals, stats.objective),
-                (3, 1, 1, 6.0)
-            );
-            // All rows in one of two clusters: the imbalance is k = 2.
-            assert_eq!(stats.imbalance, 2.0);
-            assert_eq!(closing.is_some(), is_last);
-            if let Some(closing) = closing {
-                let mut positions = [7.0, 8.0];
-                closing.apply_means(&mut positions, 1);
-                assert_eq!(positions, [3.0, 8.0]);
-            }
-        }
+    }
+
+    #[test]
+    fn closing_means_replace_only_clusters_with_rows() {
+        let closing = ClosingSums::new(vec![2, 0], vec![6.0, 9.0]);
+        let mut positions = [7.0, 8.0];
+        closing.apply_means(&mut positions, 1);
+        assert_eq!(positions, [3.0, 8.0]);
     }
 }
