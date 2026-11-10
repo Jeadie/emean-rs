@@ -28,8 +28,26 @@ import numpy as np
 # The faiss commit the reference sources come from (contrib/e_means).
 FAISS_COMMIT = "fc1095a9314f892938bf83f59e7ac966b5095def"
 
-# Reference files whose SHA-256 is recorded in the fixtures for provenance.
-REFERENCE_FILES = ("__init__.py", "base.py", "e_means.py", "e_means_spherical.py")
+
+@dataclass(frozen=True)
+class PinnedFile:
+    """A reference file and its SHA-256 at FAISS_COMMIT."""
+
+    name: str
+    sha256: str
+
+
+# The reference files at FAISS_COMMIT. The generator refuses other contents,
+# and records the digests in the fixtures.
+REFERENCE_FILES = (
+    PinnedFile("__init__.py", "ad196786de8eb8ab7a229908b86ad8548a72459ade95e9e9c3275943dd50bb78"),
+    PinnedFile("base.py", "bcffd7829ebfc25e1354308770b49e6f99d8566ba5e474a41a22e9ec414b17cd"),
+    PinnedFile("e_means.py", "fc7750ba735b502d7831a27ccebb8c22b91c0405d74717a12c90df22eb85e06b"),
+    PinnedFile(
+        "e_means_spherical.py",
+        "d4e4177593f70e284bd2f6ad8812170e2a830ea62c697c514edc6298a00ea7a6",
+    ),
+)
 
 # Package name the reference is imported under (it uses relative imports).
 REFERENCE_PACKAGE = "emeans_reference"
@@ -177,6 +195,16 @@ def load_reference(reference_dir):
     # (python -I does not stop bytecode writes).
     sys.dont_write_bytecode = True
     reference_dir = Path(reference_dir).resolve()
+    # Check the files before importing them.
+    digests = {
+        pinned.name: hashlib.sha256((reference_dir / pinned.name).read_bytes()).hexdigest()
+        for pinned in REFERENCE_FILES
+    }
+    changed = [pinned.name for pinned in REFERENCE_FILES if digests[pinned.name] != pinned.sha256]
+    if changed:
+        raise SystemExit(
+            f"{reference_dir}: {', '.join(changed)} differ from faiss commit {FAISS_COMMIT}"
+        )
     shim = load_module("faiss", Path(__file__).resolve().with_name("faiss_shim.py"))
     if sys.modules.get("faiss") is not shim:
         raise RuntimeError("the faiss shim is not registered as 'faiss'")
@@ -189,10 +217,6 @@ def load_reference(reference_dir):
     e_means = importlib.import_module(REFERENCE_PACKAGE + ".e_means")
     if e_means.faiss is not shim:
         raise RuntimeError("the reference did not bind the faiss shim")
-    digests = {
-        name: hashlib.sha256((reference_dir / name).read_bytes()).hexdigest()
-        for name in REFERENCE_FILES
-    }
     return Reference(base=base, e_means=e_means, shim=shim, files_sha256=digests)
 
 

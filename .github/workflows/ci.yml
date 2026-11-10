@@ -36,6 +36,28 @@ jobs:
       - run: cargo test --no-fail-fast --all-targets ${{ matrix.features }}
       - run: cargo test --no-fail-fast --doc ${{ matrix.features }}
 
+  # Compares the crate with the faiss e-means reference. The fixtures are not
+  # in the repository, so this job makes them first (tools/reference/README.md).
+  reference:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - run: python -m pip install numpy==2.5.3
+      - name: Get the pinned reference
+        run: |
+          git clone --filter=blob:none --sparse https://github.com/facebookresearch/faiss.git "$RUNNER_TEMP/faiss"
+          git -C "$RUNNER_TEMP/faiss" sparse-checkout set contrib/e_means
+          git -C "$RUNNER_TEMP/faiss" checkout fc1095a9314f892938bf83f59e7ac966b5095def
+      - name: Make the fixtures
+        run: >-
+          python -I tools/reference/generate_fixtures.py
+          --reference-dir "$RUNNER_TEMP/faiss/contrib/e_means" --out-dir tests/fixtures
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --test reference -- --include-ignored
+
   lint:
     runs-on: ubuntu-latest
     steps:

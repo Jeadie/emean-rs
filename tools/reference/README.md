@@ -2,11 +2,15 @@
 
 The tools in this directory make the test fixtures in `tests/fixtures/`.
 The fixtures contain the output of the faiss e-means NumPy reference.
-The Rust tests compare the `emeans` crate with these values.
+The tests in `tests/reference.rs` compare the `emeans` crate with these values.
+
+The fixtures are not in the repository (`.gitignore` excludes `tests/fixtures/`).
+Thus `cargo test` ignores the tests that read them.
+The CI job `reference` makes the fixtures and runs these tests on each pull request.
 
 | File | Function |
 | --- | --- |
-| `generate_fixtures.py` | Runs the reference and writes the two fixture files. |
+| `generate_fixtures.py` | Checks the reference files, runs the reference and writes the two fixture files. |
 | `faiss_shim.py` | Replaces `faiss` with an exact NumPy search. |
 | `../../tests/common/synthetic.rs` | Makes the same synthetic data in Rust, bit for bit. |
 
@@ -17,9 +21,10 @@ The Rust tests compare the `emeans` crate with these values.
 - License: MIT.
 - Paper: "e-means: outperforming k-means (in one-tenth the epochs)", arXiv:2611.09501.
 
-The generator records the SHA-256 of `__init__.py`, `base.py`, `e_means.py`
-and `e_means_spherical.py` in `source.reference_sha256` of each fixture file.
-Use these values to make sure that you have the correct reference files.
+`REFERENCE_FILES` in `generate_fixtures.py` gives the SHA-256 of `__init__.py`, `base.py`,
+`e_means.py` and `e_means_spherical.py` at this commit.
+The generator stops before it imports the reference if a file is different.
+It also records the values in `source.reference_sha256` of each fixture file.
 
 ## Requirements
 
@@ -27,7 +32,7 @@ Use these values to make sure that you have the correct reference files.
 - NumPy. We used NumPy 2.5.3.
 - Do not install faiss. The generator does not use it.
 
-## Regenerate the fixtures
+## Make the fixtures and run the tests
 
 1. Get `contrib/e_means` at the pinned commit. For example:
 
@@ -37,22 +42,19 @@ Use these values to make sure that you have the correct reference files.
    git -C /tmp/faiss checkout fc1095a9314f892938bf83f59e7ac966b5095def
    ```
 
-2. Compare the SHA-256 of the four files with `source.reference_sha256`:
-
-   ```sh
-   (cd /tmp/faiss/contrib/e_means && shasum -a 256 __init__.py base.py e_means.py e_means_spherical.py)
-   ```
-
-3. Go to the repository root.
-4. Run the generator:
+2. Go to the repository root.
+3. Run the generator:
 
    ```sh
    python3 -I tools/reference/generate_fixtures.py \
        --reference-dir /tmp/faiss/contrib/e_means --out-dir tests/fixtures
    ```
 
-5. Run the generator again.
-6. Make sure that `shasum -a 256 tests/fixtures/*.json` gives the same values both times.
+4. Run the reference tests, including the ignored ones:
+
+   ```sh
+   cargo test --test reference -- --include-ignored
+   ```
 
 The generator takes approximately 2 seconds.
 The output contains no time stamps and no local paths.

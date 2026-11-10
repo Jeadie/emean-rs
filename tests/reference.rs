@@ -1,10 +1,18 @@
 //! Differential tests against the reference implementation (faiss
-//! `contrib/e_means`). `tools/reference/README.md` explains how the fixtures
-//! were made and how to make them again.
+//! `contrib/e_means`).
+//!
+//! The fixtures are not in the repository. The tests that read them are
+//! ignored by default; make the fixtures as `tools/reference/README.md`
+//! describes, then run:
+//!
+//! ```text
+//! cargo test --test reference -- --include-ignored
+//! ```
 
 mod common;
 
 use std::num::{NonZeroU32, NonZeroUsize};
+use std::path::Path;
 
 use common::synthetic;
 use emeans::{
@@ -13,8 +21,27 @@ use emeans::{
 };
 use serde::Deserialize;
 
-const RECIPES: &str = include_str!("fixtures/reference_recipes.json");
-const RUNS: &str = include_str!("fixtures/reference_runs.json");
+/// Reads and parses fixture file `name` from `tests/fixtures`.
+fn fixtures<T: serde::de::DeserializeOwned>(name: &str) -> T {
+    let path = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("tests/fixtures")
+        .join(name);
+    let text = std::fs::read_to_string(&path).unwrap_or_else(|error| {
+        panic!(
+            "cannot read {}: {error}. Make the fixtures as tools/reference/README.md describes.",
+            path.display()
+        )
+    });
+    serde_json::from_str(&text).unwrap_or_else(|error| panic!("{}: {error}", path.display()))
+}
+
+fn recipe_fixtures() -> RecipeFixtures {
+    fixtures("reference_recipes.json")
+}
+
+fn run_fixtures() -> RunFixtures {
+    fixtures("reference_runs.json")
+}
 
 /// The relative tolerance for values that the reference computes with the
 /// platform's `pow` and `cos`, which may differ in the last bit.
@@ -114,8 +141,9 @@ fn recipe_config(inputs: &RecipeInputs) -> Emeans {
 }
 
 #[test]
+#[ignore = "needs tests/fixtures; see tools/reference/README.md"]
 fn recipes_match_the_reference() {
-    let fixtures: RecipeFixtures = serde_json::from_str(RECIPES).unwrap();
+    let fixtures = recipe_fixtures();
     assert!(fixtures.cases.len() > 200);
     let mut checked = 0;
     for case in &fixtures.cases {
@@ -186,8 +214,9 @@ fn recipes_match_the_reference() {
 }
 
 #[test]
+#[ignore = "needs tests/fixtures; see tools/reference/README.md"]
 fn inputs_that_break_the_reference_cannot_be_expressed() {
-    let fixtures: RecipeFixtures = serde_json::from_str(RECIPES).unwrap();
+    let fixtures = recipe_fixtures();
     assert!(!fixtures.raising_cases.is_empty());
     for case in &fixtures.raising_cases {
         let inputs = &case.inputs;
@@ -377,9 +406,14 @@ fn run(inputs: &RunInputs) -> Run {
 }
 
 #[test]
-fn inputs_are_the_reference_inputs_bit_for_bit() {
+fn the_synthetic_generator_gives_its_known_answers() {
     synthetic::self_check();
-    let fixtures: RunFixtures = serde_json::from_str(RUNS).unwrap();
+}
+
+#[test]
+#[ignore = "needs tests/fixtures; see tools/reference/README.md"]
+fn inputs_are_the_reference_inputs_bit_for_bit() {
+    let fixtures = run_fixtures();
     for scenario in &fixtures.scenarios {
         let (inputs, check) = (&scenario.inputs, &scenario.data_check);
         let name = &inputs.name;
@@ -416,8 +450,9 @@ fn inputs_are_the_reference_inputs_bit_for_bit() {
 }
 
 #[test]
+#[ignore = "needs tests/fixtures; see tools/reference/README.md"]
 fn runs_match_the_reference() {
-    let fixtures: RunFixtures = serde_json::from_str(RUNS).unwrap();
+    let fixtures = run_fixtures();
     assert_eq!(fixtures.scenarios.len(), 6);
     for scenario in &fixtures.scenarios {
         let name = &scenario.inputs.name;
@@ -499,8 +534,9 @@ fn runs_match_the_reference() {
 }
 
 #[test]
+#[ignore = "needs tests/fixtures; see tools/reference/README.md"]
 fn revival_matches_the_reference_statistically() {
-    let fixtures: RunFixtures = serde_json::from_str(RUNS).unwrap();
+    let fixtures = run_fixtures();
     let mut ours_mse = Vec::new();
     let mut reference_mse = Vec::new();
     let mut ours_splits = Vec::new();

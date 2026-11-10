@@ -94,12 +94,6 @@ training are not implemented. Tests compare this crate with the reference
 implementation; see
 [`tools/reference/`](https://github.com/Jeadie/emean-rs/tree/main/tools/reference).
 
-```text
-cargo run --release --example compare_with_lloyd
-```
-
-compares e-means with Lloyd's algorithm on synthetic data.
-
 ## Citation
 
 If you use e-means, cite the paper:
