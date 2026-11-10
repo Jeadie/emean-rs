@@ -157,7 +157,7 @@ fn every_row_its_own_cluster_when_k_equals_n() {
 }
 
 #[test]
-fn budgets_below_one_epoch_give_no_labels() {
+fn labels_need_a_last_epoch_that_visits_every_row() {
     let values = blobs(1000, 3, 4, 1.0, 5);
     let data = RowMatrix::new(&values, 3).unwrap();
     let fit = Emeans::new(k(4))
@@ -166,6 +166,15 @@ fn budgets_below_one_epoch_give_no_labels() {
         .unwrap();
     assert_eq!(fit.labels, None);
     assert_eq!(fit.model.history()[0].rows, 500);
+
+    // 0.9996 of 1000 rows rounds to all 1000: the only epoch visits every row.
+    let fit = Emeans::new(k(4))
+        .with_epochs(Epochs::new(0.9996).unwrap())
+        .fit(data)
+        .unwrap();
+    assert_eq!(fit.model.history()[0].rows, 1000);
+    assert!(fit.model.recipe().last_epoch_is_full());
+    assert_eq!(fit.labels.map(|labels| labels.len()), Some(1000));
 }
 
 #[test]
@@ -291,6 +300,78 @@ fn a_session_enforces_its_row_budget() {
         Error::from(session.finish().unwrap_err()),
         Error::Incomplete { remaining: 50 }
     );
+}
+
+/// Where a run should be after `fed` rows, from the epoch plan and the batch
+/// size alone: `(epoch, updates, rows to the next update)`. Each epoch is cut
+/// into batches of `batch` rows, and its last batch keeps the rest.
+fn expected_progress(epoch_rows: &[usize], batch: usize, fed: usize) -> (u64, u64, usize) {
+    let (mut before, mut updates) = (0, 0);
+    for (epoch, &rows) in epoch_rows.iter().enumerate() {
+        if fed < before + rows {
+            let offset = fed - before;
+            let done = offset / batch;
+            let batch_end = ((done + 1) * batch).min(rows);
+            return (epoch as u64, updates + done as u64, batch_end - offset);
+        }
+        before += rows;
+        updates += rows.div_ceil(batch) as u64;
+    }
+    (epoch_rows.len() as u64, updates, 0)
+}
+
+#[test]
+fn a_session_reports_its_progress_after_every_row() {
+    let dim = 2;
+    // More clusters than blobs, so that some clusters die and revive.
+    let values = blobs(103, dim, 2, 0.1, 21);
+    let config = Emeans::new(k(12))
+        .with_epochs(Epochs::new(2.4).unwrap())
+        .with_batch(Batch::Fixed(NonZeroUsize::new(10).unwrap()))
+        .with_revival(Revival::Threshold(emeans::Threshold::new(0.9).unwrap()));
+    let init = RowMatrix::new(&values[..12 * dim], dim).unwrap();
+    let mut session = config.begin(103, init).unwrap();
+    let recipe = session.recipe().clone();
+    let epoch_rows: Vec<usize> = recipe.epoch_sizes().collect();
+    assert_eq!(epoch_rows, [103, 41, 103]);
+    let total = recipe.total_rows() as usize;
+
+    let mut fed = 0;
+    for epoch in 0..recipe.epoch_count() {
+        for row in 0..recipe.rows_in_epoch(epoch).unwrap() {
+            let progress = (
+                session.epoch(),
+                session.updates(),
+                session.rows_to_next_update(),
+            );
+            assert_eq!(
+                progress,
+                expected_progress(&epoch_rows, 10, fed),
+                "{fed} rows"
+            );
+            assert_eq!(session.remaining_rows(), (total - fed) as u64);
+            let one = RowMatrix::new(&values[row * dim..(row + 1) * dim], dim).unwrap();
+            session.feed(one).unwrap();
+            fed += 1;
+            let revived: u64 = session.history().iter().map(|e| e.revivals).sum();
+            assert!(session.revivals() >= revived);
+        }
+    }
+    assert_eq!(
+        (
+            session.epoch(),
+            session.updates(),
+            session.rows_to_next_update()
+        ),
+        (3, recipe.total_updates(), 0)
+    );
+    assert_eq!(session.remaining_rows(), 0);
+    let revivals = session.revivals();
+    assert!(revivals > 0, "the test should exercise revival");
+    let model = session.finish().unwrap();
+    assert_eq!(model.revivals(), revivals);
+    let per_epoch: Vec<u64> = model.history().iter().map(|e| e.updates).collect();
+    assert_eq!(per_epoch, [11, 5, 11]);
 }
 
 #[test]

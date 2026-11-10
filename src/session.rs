@@ -1,19 +1,19 @@
 //! Caller-driven training, for data that is streamed from storage.
 
-use core::fmt;
+use core::{fmt, mem};
 
 use crate::Error;
 use crate::config::{Emeans, Metric};
-use crate::kernel::SearchCentroids;
+use crate::epoch::{BatchEnd, Epoch, Phase};
 use crate::matrix::{RowMatrix, RowNorm};
 use crate::model::{Centroids, Model};
 use crate::positions;
-use crate::recipe::{REVIVAL_INTERVAL, Recipe};
+use crate::recipe::Recipe;
 use crate::rng::{Rng, Stream};
 use crate::rows::{CheckedRows, RowSource, Window};
+use crate::running::RunningCentroids;
 use crate::scalar::Scalar;
-use crate::state::EmaState;
-use crate::stats::{BatchStats, ClosingSums, EpochAccumulator, EpochStats};
+use crate::stats::{ClosingSums, EpochStats, History};
 
 /// A training run that the caller feeds with rows.
 ///
@@ -58,33 +58,14 @@ use crate::stats::{BatchStats, ClosingSums, EpochAccumulator, EpochStats};
 /// ```
 pub struct Session<T: Scalar> {
     recipe: Recipe,
-    state: EmaState,
-    search: SearchCentroids<T>,
-    revival_rng: Rng,
-    /// Unit-norm copies of the centroids, for [`Metric::Spherical`].
-    unit_positions: Vec<f64>,
+    /// The running centroids, and the search over them.
+    centroids: RunningCentroids<T>,
+    /// The open epoch, or the closing sums once every epoch is complete.
     phase: Phase,
-    /// The rows of the current batch.
-    batch: BatchStats,
-    /// Rows fed since the start.
-    fed: u64,
-    /// Updates applied since the start.
-    updates: u64,
-    history: Vec<EpochStats>,
-    revivals: u64,
+    history: History,
     /// Search output buffers, at most one batch long.
     labels: Vec<u32>,
     distances: Vec<f64>,
-}
-
-/// Where a session is in its recipe.
-#[derive(Debug)]
-enum Phase {
-    /// An epoch is open.
-    Epoch(EpochAccumulator),
-    /// Every epoch is complete; the last one left these sums for the
-    /// closing means.
-    Complete(ClosingSums),
 }
 
 impl<T: Scalar> Session<T> {
@@ -101,25 +82,22 @@ impl<T: Scalar> Session<T> {
     /// Starts a run from checked initial centroids (`k × d`, `f64`, already
     /// of norm 1 for [`Metric::Spherical`]).
     pub(crate) fn start(recipe: Recipe, positions: Vec<f64>) -> Self {
-        let dim = recipe.dim();
-        let clusters = recipe.clusters().get() as usize;
-        debug_assert_eq!(positions.len(), clusters * dim);
-        let metric = recipe.metric();
-        let unit_positions = match metric {
-            Metric::SquaredEuclidean => Vec::new(),
-            Metric::Spherical => positions.clone(),
-        };
+        debug_assert_eq!(
+            positions.len(),
+            recipe.clusters().get() as usize * recipe.dim()
+        );
+        let first = recipe
+            .planned_epoch(0)
+            .expect("a plan has at least one epoch");
         Self {
-            search: SearchCentroids::new(&positions, dim, metric),
-            state: EmaState::new(positions, dim),
-            revival_rng: Rng::new(recipe.seed(), Stream::Revival),
-            unit_positions,
-            phase: Phase::Epoch(open_epoch(&recipe, 0)),
-            batch: BatchStats::new(clusters, dim),
-            fed: 0,
-            updates: 0,
-            history: Vec::new(),
-            revivals: 0,
+            centroids: RunningCentroids::new(
+                positions,
+                recipe.dim(),
+                recipe.metric(),
+                Rng::new(recipe.seed(), Stream::Revival),
+            ),
+            phase: Phase::Epoch(Epoch::open(&recipe, first)),
+            history: History::default(),
             labels: Vec::new(),
             distances: Vec::new(),
             recipe,
@@ -135,26 +113,32 @@ impl<T: Scalar> Session<T> {
     /// number of epochs.
     pub fn epoch(&self) -> u64 {
         match &self.phase {
-            Phase::Epoch(epoch) => epoch.epoch(),
+            Phase::Epoch(epoch) => epoch.plan().index(),
             Phase::Complete(_) => self.recipe.epoch_count(),
         }
     }
 
     /// The number of updates applied so far.
     pub fn updates(&self) -> u64 {
-        self.updates
+        match &self.phase {
+            Phase::Epoch(epoch) => epoch.updates_done(),
+            Phase::Complete(_) => self.recipe.total_updates(),
+        }
     }
 
     /// The number of rows that the recipe still expects.
     pub fn remaining_rows(&self) -> u64 {
-        self.recipe.total_rows() - self.fed
+        match &self.phase {
+            Phase::Epoch(epoch) => self.recipe.total_rows() - epoch.rows_done(),
+            Phase::Complete(_) => 0,
+        }
     }
 
     /// The number of rows that complete the current batch, or 0 when
     /// training is complete.
     pub fn rows_to_next_update(&self) -> usize {
         match &self.phase {
-            Phase::Epoch(epoch) => batch_len(&self.recipe, epoch, &self.batch) - self.batch.rows(),
+            Phase::Epoch(epoch) => epoch.rows_to_next_update(),
             Phase::Complete(_) => 0,
         }
     }
@@ -167,19 +151,24 @@ impl<T: Scalar> Session<T> {
 
     /// The statistics of each completed epoch.
     pub fn history(&self) -> &[EpochStats] {
-        &self.history
+        self.history.epochs()
     }
 
     /// The number of dead clusters revived so far.
     pub fn revivals(&self) -> u64 {
-        self.revivals
+        let open = match &self.phase {
+            Phase::Epoch(epoch) => epoch.revivals(),
+            Phase::Complete(_) => 0,
+        };
+        self.history.revivals() + open
     }
 
     /// The current centroids, `k × d`: the centroids that the next rows are
     /// assigned to. They are not the final centroids, which
     /// [`Session::finish`] computes.
     pub fn centroids(&self) -> RowMatrix<'_, T> {
-        RowMatrix::new(self.search.centroids(), self.recipe.dim()).expect("k × d centroids")
+        let centroids = self.centroids.search().centroids();
+        RowMatrix::new(centroids, self.recipe.dim()).expect("k × d centroids")
     }
 
     /// Feeds rows to the run.
@@ -235,24 +224,32 @@ impl<T: Scalar> Session<T> {
     /// [`Unfinished`] if the recipe expects more rows. It gives the session
     /// back unchanged, and converts to [`Error::Incomplete`] with `?`.
     pub fn finish(self) -> Result<Model<T>, Unfinished<T>> {
-        let Phase::Complete(closing) = &self.phase else {
+        let Self {
+            recipe,
+            centroids,
+            phase: Phase::Complete(closing),
+            history,
+            ..
+        } = self
+        else {
             return Err(Unfinished {
                 session: Box::new(self),
             });
         };
-        let dim = self.recipe.dim();
-        let metric = self.recipe.metric();
-        let mut positions = self.state.positions().to_vec();
+        let dim = recipe.dim();
+        let metric = recipe.metric();
+        let mut positions = centroids.into_positions();
         closing.apply_means(&mut positions, dim);
         if metric == Metric::Spherical {
             positions::normalize_each(&mut positions, dim);
         }
         let centroids = Centroids::from_positions(&positions, dim, metric);
+        let revivals = history.revivals();
         Ok(Model::new(
             centroids,
-            self.recipe,
-            self.history,
-            self.revivals,
+            recipe,
+            history.into_epochs(),
+            revivals,
         ))
     }
 
@@ -307,81 +304,39 @@ impl<T: Scalar> Session<T> {
             let Phase::Epoch(epoch) = &mut self.phase else {
                 unreachable!("the row budget ends with the last epoch");
             };
-            let take = (batch_len(&self.recipe, epoch, &self.batch) - self.batch.rows())
-                .min(source.len() - offset);
+            let take = epoch.rows_to_next_update().min(source.len() - offset);
             let piece = Window::new(source, offset, take);
             self.labels.resize(take, 0);
             self.distances.resize(take, 0.0);
-            self.search
+            self.centroids
+                .search()
                 .assign(&piece, &mut self.labels, &mut self.distances);
-            self.batch.add(&piece, &self.labels);
-            epoch.add_assigned(&self.distances);
+            let full = epoch.add(&piece, &self.labels, &self.distances);
             sink(offset, &self.labels);
             offset += take;
-            self.fed += take as u64;
-            if self.batch.rows() == batch_len(&self.recipe, epoch, &self.batch) {
-                self.finish_batch();
+            let Some(batch) = full else {
+                continue;
+            };
+            let update = self.recipe.update(batch.update_index());
+            let revived = self.centroids.apply(update, batch.sums(), batch.counts());
+            if batch.close(revived) == BatchEnd::EpochComplete {
+                self.finish_epoch();
             }
-        }
-    }
-
-    /// Applies the update of the complete batch, revives dead clusters every
-    /// [`REVIVAL_INTERVAL`] updates, and closes the epoch when it is complete.
-    fn finish_batch(&mut self) {
-        let Phase::Epoch(epoch) = &mut self.phase else {
-            unreachable!("a batch belongs to an open epoch");
-        };
-        let alpha = self.recipe.alpha(self.updates);
-        epoch.add_batch(&self.batch);
-        self.state
-            .apply(alpha, self.batch.sums(), self.batch.counts());
-        self.updates += 1;
-        let revived = match self.recipe.revival() {
-            Some(threshold) if self.updates % REVIVAL_INTERVAL == 0 => {
-                self.state
-                    .revive::<T>(threshold.get(), self.recipe.metric(), &mut self.revival_rng)
-                    as u64
-            }
-            _ => 0,
-        };
-        epoch.add_update(revived);
-        self.revivals += revived;
-        self.batch.clear();
-        let epoch_complete = epoch.is_complete();
-        self.refresh_search();
-        if epoch_complete {
-            self.finish_epoch();
         }
     }
 
     /// Records the statistics of the complete epoch and opens the next one,
     /// or completes the run after the last epoch.
     fn finish_epoch(&mut self) {
-        // Take the open epoch out; the empty placeholder (no allocation) is
-        // replaced below.
+        // Take the epoch out to finish it by value. The placeholder does not
+        // allocate, and the next phase replaces it.
         let placeholder = Phase::Complete(ClosingSums::default());
-        let Phase::Epoch(epoch) = core::mem::replace(&mut self.phase, placeholder) else {
-            unreachable!("only an open epoch can finish");
+        let Phase::Epoch(epoch) = mem::replace(&mut self.phase, placeholder) else {
+            unreachable!("only an open epoch finishes");
         };
-        let next = epoch.epoch() + 1;
-        let (stats, closing) = epoch.finish();
+        let (stats, next) = epoch.finish(&self.recipe);
         self.history.push(stats);
-        self.phase = match closing {
-            Some(closing) => Phase::Complete(closing),
-            None => Phase::Epoch(open_epoch(&self.recipe, next)),
-        };
-    }
-
-    /// Loads the current centroids into the search.
-    fn refresh_search(&mut self) {
-        match self.recipe.metric() {
-            Metric::SquaredEuclidean => self.search.load(self.state.positions()),
-            Metric::Spherical => {
-                self.unit_positions.copy_from_slice(self.state.positions());
-                positions::normalize_each(&mut self.unit_positions, self.recipe.dim());
-                self.search.load(&self.unit_positions);
-            }
-        }
+        self.phase = next;
     }
 }
 
@@ -390,30 +345,11 @@ impl<T: Scalar> fmt::Debug for Session<T> {
         f.debug_struct("Session")
             .field("recipe", &self.recipe)
             .field("epoch", &self.epoch())
-            .field("updates", &self.updates)
+            .field("updates", &self.updates())
             .field("remaining_rows", &self.remaining_rows())
-            .field("revivals", &self.revivals)
+            .field("revivals", &self.revivals())
             .finish_non_exhaustive()
     }
-}
-
-/// The accumulator of epoch `epoch` of `recipe`.
-fn open_epoch(recipe: &Recipe, epoch: u64) -> EpochAccumulator {
-    let planned = recipe.rows_in_epoch(epoch).expect("an epoch of the recipe");
-    let is_last = epoch + 1 == recipe.epoch_count();
-    EpochAccumulator::new(
-        epoch,
-        planned,
-        recipe.clusters().get() as usize,
-        recipe.dim(),
-        is_last,
-    )
-}
-
-/// The number of rows of the current batch of `epoch`.
-fn batch_len(recipe: &Recipe, epoch: &EpochAccumulator, batch: &BatchStats) -> usize {
-    let batch_start = epoch.assigned() - batch.rows();
-    recipe.batch_size().get().min(epoch.planned() - batch_start)
 }
 
 /// The error of [`Session::finish`] when the recipe expects more rows. It

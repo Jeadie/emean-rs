@@ -278,15 +278,15 @@ pub struct Fit<T: Scalar> {
     /// The trained model.
     pub model: Model<T>,
     /// The cluster that the last epoch assigned each training row to, or
-    /// `None` when the epoch budget is below one, so that the last epoch
-    /// does not visit every row.
+    /// `None` when the last epoch does not visit every row (see
+    /// [`Recipe::last_epoch_is_full`](crate::Recipe::last_epoch_is_full)).
     ///
     /// The labels cost no extra search (only 4 bytes per row), but they come
     /// from centroids that were still moving during the last epoch. So a few
     /// labels can differ from the nearest final centroid; [`Model::assign`]
-    /// gives the nearest final centroids for the cost of one more pass. Each final centroid is the mean of the rows
-    /// with its label (scaled to norm 1 for
-    /// [`Metric::Spherical`](crate::Metric::Spherical)), or its last moving
-    /// position if no row has its label.
+    /// gives the nearest final centroids for the cost of one more pass.
+    /// Each final centroid is the mean of the rows with its label (scaled to
+    /// norm 1 for [`Metric::Spherical`](crate::Metric::Spherical)), or its
+    /// last moving position if no row has its label.
     pub labels: Option<Vec<u32>>,
 }

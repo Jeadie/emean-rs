@@ -175,6 +175,7 @@
 #![warn(missing_docs)]
 
 mod config;
+mod epoch;
 mod error;
 mod fit;
 mod kernel;
@@ -186,6 +187,7 @@ mod positions;
 mod recipe;
 mod rng;
 mod rows;
+mod running;
 mod scalar;
 mod session;
 mod state;

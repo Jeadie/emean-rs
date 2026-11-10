@@ -38,6 +38,11 @@ impl EmaState {
         &self.positions
     }
 
+    /// `k × d` row-major centroids.
+    pub(crate) fn into_positions(self) -> Vec<f64> {
+        self.positions
+    }
+
     /// Running counts `N_j`.
     #[cfg(test)]
     pub(crate) fn mass(&self) -> &[f64] {
