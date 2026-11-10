@@ -245,6 +245,19 @@ struct RunInputs {
     unused_threshold: Option<f64>,
 }
 
+/// What the generator recorded about a scenario's inputs, to show that
+/// `synthetic` rebuilds them bit for bit.
+#[derive(Deserialize)]
+struct DataCheck {
+    /// The first 8 values of the data.
+    head: Vec<f64>,
+    /// [`synthetic::fnv1a64_f32`] of all the data, as 16 hex digits.
+    fnv1a64: String,
+    init_indices: Vec<usize>,
+    /// The first 8 rows of each epoch's order.
+    epoch_order_heads: Vec<Vec<usize>>,
+}
+
 #[derive(Deserialize)]
 struct RunRecipe {
     batch_size: usize,
@@ -264,6 +277,7 @@ struct EpochStat {
 #[derive(Deserialize)]
 struct RunResult {
     inputs: RunInputs,
+    data_check: DataCheck,
     recipe: RunRecipe,
     epochs: Vec<EpochStat>,
     n_splits: u64,
@@ -359,6 +373,45 @@ fn run(inputs: &RunInputs) -> Run {
         model,
         labels,
         train_mse,
+    }
+}
+
+#[test]
+fn inputs_are_the_reference_inputs_bit_for_bit() {
+    synthetic::self_check();
+    let fixtures: RunFixtures = serde_json::from_str(RUNS).unwrap();
+    for scenario in &fixtures.scenarios {
+        let (inputs, check) = (&scenario.inputs, &scenario.data_check);
+        let name = &inputs.name;
+        let x = synthetic::blobs(
+            inputs.seed,
+            inputs.n,
+            inputs.d,
+            inputs.centers,
+            inputs.spread,
+            inputs.normalize,
+        );
+        let head: Vec<f64> = x.iter().take(8).map(|&value| f64::from(value)).collect();
+        assert_eq!(head, check.head, "{name}");
+        assert_eq!(
+            format!("{:016x}", synthetic::fnv1a64_f32(&x)),
+            check.fnv1a64,
+            "{name}"
+        );
+        assert_eq!(
+            synthetic::init_indices(inputs.seed, inputs.n, inputs.k),
+            check.init_indices,
+            "{name}"
+        );
+        let recipe = run_config(inputs).recipe(inputs.n, inputs.d).unwrap();
+        let heads: Vec<Vec<usize>> = (0..recipe.epoch_count())
+            .map(|epoch| {
+                let rows = recipe.rows_in_epoch(epoch).unwrap();
+                let order = synthetic::epoch_order(inputs.seed, inputs.n, epoch as usize, rows);
+                order[..order.len().min(8)].to_vec()
+            })
+            .collect();
+        assert_eq!(heads, check.epoch_order_heads, "{name}");
     }
 }
 
